@@ -1,0 +1,100 @@
+{
+  "experiment": "E2: 平台接入矩阵标准化复现",
+  "criteria": {
+    "reachable": "渲染文本 > 800 字符",
+    "sessionSeen": "页面出现账号/订单/投稿等会话痕迹",
+    "goodsOk": "能解析出价格或结构化语义元素"
+  },
+  "rows": [
+    {
+      "id": "jd",
+      "name": "京东",
+      "reachable": true,
+      "sessionSeen": true,
+      "goodsOk": true,
+      "verdict": "通过",
+      "finalUrl": "https://search.jd.com/Search?keyword=%E9%92%A2%E5%8C%96%E8%86%9C",
+      "title": "钢化膜 - 商品搜索 - 京东",
+      "textLen": 11052,
+      "goodsMatches": 29,
+      "navCount": 2,
+      "reqCount": 446
+    },
+    {
+      "id": "taobao",
+      "name": "淘宝/天猫",
+      "reachable": true,
+      "sessionSeen": true,
+      "goodsOk": true,
+      "verdict": "通过",
+      "finalUrl": "https://s.taobao.com/search?page=1&q=%E9%92%A2%E5%8C%96%E8%86%9C&tab=all",
+      "title": "钢化膜_淘宝搜索",
+      "textLen": 6456,
+      "goodsMatches": 28,
+      "navCount": 3,
+      "reqCount": 443
+    },
+    {
+      "id": "pdd",
+      "name": "拼多多",
+      "reachable": true,
+      "sessionSeen": false,
+      "goodsOk": true,
+      "verdict": "部分通过(登录态未验证)",
+      "finalUrl": "https://mobile.yangkeduo.com/search_result.html?search_key=%E9%92%A2%E5%8C%96%E8%86%9C&page_id=10015_1790325309045_hd179fayuu&list_id=dq6yequ7nt&flip=0%3B0%3B0%3B0%3B85368b24-8d4e-4c57-1dfb-f4e91e7c7d27%3B%2F40%3B0%3B0%3Bafcab8177d948e73eb3f5a280188320e&is_back=&bsch_is_search_mall=&bsch_show_active_page=&sort_type=default&price_index=-1&property=%7B%22-9%22%3A%5B%22property%2C-9%2C29%22%5D%7D&filter=&opt_tag_name=&brand_tab_filter=",
+      "title": "拼多多",
+      "textLen": 3510,
+      "goodsMatches": 58,
+      "navCount": 3,
+      "reqCount": 138
+    },
+    {
+      "id": "douyin",
+      "name": "抖音(内容)",
+      "reachable": true,
+      "sessionSeen": true,
+      "goodsOk": true,
+      "verdict": "通过",
+      "finalUrl": "https://www.douyin.com/search/%E9%92%A2%E5%8C%96%E8%86%9C",
+      "title": "发现更多精彩视频 - 抖音搜索",
+      "textLen": 4699,
+      "goodsMatches": 2,
+      "navCount": 6,
+      "reqCount": 523
+    },
+    {
+      "id": "suning",
+      "name": "苏宁易购",
+      "reachable": true,
+      "sessionSeen": true,
+      "goodsOk": false,
+      "verdict": "仅可达(提取失败)",
+      "finalUrl": "https://search.suning.com/%E9%92%A2%E5%8C%96%E8%86%9C/",
+      "title": "钢化膜_钢化膜推荐 - 苏宁易购",
+      "textLen": 3763,
+      "goodsMatches": 0,
+      "navCount": 2,
+      "reqCount": 134
+    },
+    {
+      "id": "meituan",
+      "name": "美团(到店)",
+      "reachable": false,
+      "sessionSeen": false,
+      "goodsOk": false,
+      "verdict": "未通过",
+      "finalUrl": "https://verify.meituan.com/v2/app/general_page?requestCode=ad1afe18ecfa4661a9c5a15a5651d0c7&adaptor=auto&action=spiderindefence&succCallbackUrl=https%3A%2F%2Foptimus-mtsi.meituan.com%2Foptimus%2FverifyResult%3ForiginUrl%3Dhttps%253A%252F%252Fi.meituan.com%252Fmttouch%252Fpage%252Fhome",
+      "title": "验证中心",
+      "textLen": 42,
+      "goodsMatches": 0,
+      "navCount": 1,
+      "reqCount": 29
+    }
+  ],
+  "aggregate": {
+    "total": 6,
+    "passed": 3,
+    "partial": 1,
+    "passRate": 0.5
+  }
+}

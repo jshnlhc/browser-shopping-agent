@@ -1,0 +1,76 @@
+{
+  "experiment": "E3: 判据层级验证",
+  "steps": {
+    "cookieCheck": {
+      "total": 489,
+      "jdCookieCount": 73,
+      "jdHasPin": true,
+      "jdHasThor": true,
+      "jdHasLegacyPtKey": false,
+      "topDomains": [
+        [
+          "douyin.com",
+          53
+        ],
+        [
+          "taobao.com",
+          40
+        ],
+        [
+          "jd.com",
+          36
+        ],
+        [
+          "tmall.com",
+          28
+        ],
+        [
+          "vip.com",
+          21
+        ],
+        [
+          "fliggy.com",
+          21
+        ],
+        [
+          "tmall.hk",
+          21
+        ],
+        [
+          "msn.cn",
+          19
+        ]
+      ]
+    },
+    "jdProtectedPage": {
+      "url": "https://item.jd.com/100159918316.html",
+      "title": "绿联适用红米k80/K80pro钢化膜 红米k80手机膜Redmi冠军版 全屏覆盖超薄高清防指纹【超声波秒解锁】【行情 报价 价格 评测】-京东",
+      "len": 4950,
+      "redirected": false,
+      "redirectedToLogin": false
+    },
+    "p1Verdict": {
+      "cookieSaysLoggedIn": true,
+      "redirectSaysLoggedIn": true,
+      "agreement": "AGREE"
+    },
+    "cart": {
+      "url": "https://cart.jd.com/cart_index",
+      "title": "京东商城 - 购物车",
+      "len": 1840,
+      "redirected": false,
+      "hasContent": true
+    },
+    "p3Verdict": {
+      "note": "商品总额应等于各已勾选商品的原价×件数之和；到手价不可用于反推数量",
+      "cartRendered": true
+    },
+    "taobaoProtectedPage": {
+      "url": "https://passport.taobao.com/iv/identity_verify.htm?htoken=BDBpTTBMYM9QMJ6OX5IiV9f24XY8oDXZXLE4TPVE3euGwEN3jOTwAxbfqSu8ijExVLaPVY3zn3R5ZKbfRL9Lxw&tag=8&lang=zh_CN&appName=",
+      "title": "阿里巴巴集团 | 身份验证",
+      "len": 252,
+      "redirected": true,
+      "redirectedToLogin": true
+    }
+  }
+}

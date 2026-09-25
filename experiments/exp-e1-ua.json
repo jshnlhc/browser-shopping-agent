@@ -1,0 +1,44 @@
+{
+  "experiment": "E1: UA 对照实验（检验 H2）",
+  "target": "https://s.taobao.com/search?q=%E9%92%A2%E5%8C%96%E8%86%9C",
+  "hypothesis": "H2: 无头 UA 会导致渲染完整度显著下降（表现为页面文本长度大幅减少或商品信息缺失）",
+  "runs": [
+    {
+      "label": "A_native_ua",
+      "uaUsed": "(native)",
+      "url": "https://s.taobao.com/search?page=1&q=%E9%92%A2%E5%8C%96%E8%86%9C&tab=all",
+      "title": "钢化膜_淘宝搜索",
+      "len": 6501,
+      "effectiveUA": "Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/153.0.0.0 Safari/537.36 Edg/153.0.0.0",
+      "hasGoods": true,
+      "loginWall": false
+    },
+    {
+      "label": "B_headless_ua",
+      "uaUsed": "Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) HeadlessChrome/153.0.0.0 Safari/537.36",
+      "url": "https://s.taobao.com/search?q=%E9%92%A2%E5%8C%96%E8%86%9C",
+      "title": "",
+      "len": 223,
+      "effectiveUA": "Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) HeadlessChrome/153.0.0.0 Safari/537.36",
+      "hasGoods": false,
+      "loginWall": false
+    },
+    {
+      "label": "C_restored_ua",
+      "uaUsed": "(native)",
+      "url": "https://s.taobao.com/search?page=1&q=%E9%92%A2%E5%8C%96%E8%86%9C&tab=all",
+      "title": "钢化膜_淘宝搜索",
+      "len": 6387,
+      "effectiveUA": "Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/153.0.0.0 Safari/537.36 Edg/153.0.0.0",
+      "hasGoods": true,
+      "loginWall": false
+    }
+  ],
+  "derived": {
+    "nativeLen": 6501,
+    "headlessLen": 223,
+    "restoredLen": 6387,
+    "dropRatio": 0.9657,
+    "reversible": true
+  }
+}
