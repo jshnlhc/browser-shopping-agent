@@ -382,26 +382,26 @@ pointerdown → mousedown → pointerup → mouseup → click
 
 ## 参考文献
 
-[^1]: Nguyen, D., Chen, J., Wang, Y., et al. GUI Agents: A Survey. arXiv:2412.13501.
-[^2]: Shi, Y., Yu, W., Huang, J., Yao, W., Chen, W., Liu, N. Towards Trustworthy GUI Agents: A Survey. arXiv:2503.23434.
-[^3]: Deng, X., Gu, Y., Zheng, B., et al. Mind2Web: Towards a Generalist Agent for the Web. NeurIPS 2023.
-[^4]: Zhou, S., Xu, F. F., Zhu, H., et al. WebArena: A Realistic Web Environment for Building Autonomous Agents. ICLR 2024.
-[^5]: He, H., Yao, W., Ma, K., et al. WebVoyager: Building an End-to-End Web Agent with Large Multimodal Models. ACL 2024.
-[^6]: Xue, T., Qi, W., Shi, T., Song, C. H., Gou, B., Song, D., Sun, H., Su, Y. An Illusion of Progress? Assessing the Current State of Web Agents. COLM 2025. arXiv:2504.01382.
-[^7]: Yao, S., Chen, H., Yang, J., Narasimhan, K. WebShop: Towards Scalable Real-World Web Interaction with Grounded Language Agents. NeurIPS 2022. arXiv:2207.01206.
-[^8]: Allouah, A., Besbes, O., Figueroa, J. D., Kanoria, Y., Kumar, A. What Is Your AI Agent Buying? Evaluation, Biases, Model Dependence, & Emerging Implications for Agentic E-Commerce. arXiv:2508.02630.
-[^9]: Xie, T., Zhang, D., Chen, J., et al. OSWorld: Benchmarking Multimodal Agents for Open-Ended Tasks in Real Computer Environments. NeurIPS 2024.
-[^10]: Rawles, C., Clinckemaillie, S., Chang, Y., et al. AndroidWorld: A Dynamic Benchmarking Environment for Autonomous Agents. ICLR 2025.
-[^11]: Wang, P., Wu, Y., Song, X., et al. ShopSimulator: Evaluating and Exploring RL-Driven LLM Agent for Shopping Assistants. arXiv:2601.18225.
-[^12]: Wang, J., Xiao, K., Zhao, H., et al. ProductResearch: Training E-Commerce Deep Research Agents via Multi-Agent Synthetic Trajectory Distillation. arXiv:2602.23716.
-[^13]: Yu, Z., Xiao, K., Zhao, H., et al. Shopping Companion: Benchmarking and Training LLM Agents for Long-Horizon Preference-Grounded E-Commerce Tasks. arXiv:2603.14864.
-[^14]: 京东云开发者社区. 商家智能助手：多智能体在电商垂域的技术探索.
-[^15]: niespodd. browser-fingerprinting: Analysis of Bot Protection Systems. GitHub.
-[^16]: Browserless. Anti-Detection Techniques: 2026 Comprehensive Guide.
-[^17]: Chrome for Developers. Chrome DevTools MCP server for AI agents, 2025.
-[^18]: vivo 官方支持. 手机贴钢化膜后，指纹无法录入、指纹解锁失灵或不灵敏.
-[^19]: 荣耀官方支持. 手机指纹解锁失败问题排查指南 / 手机指纹录入失败怎么办.
-[^20]: Google. Chrome DevTools Protocol Documentation.
+[^1]: Nguyen, D., Chen, J., Wang, Y., et al. GUI Agents: A Survey. arXiv:2412.13501. https://arxiv.org/abs/2412.13501
+[^2]: Shi, Y., Yu, W., Huang, J., Yao, W., Chen, W., Liu, N. Towards Trustworthy GUI Agents: A Survey. arXiv:2503.23434. https://arxiv.org/abs/2503.23434
+[^3]: Deng, X., Gu, Y., Zheng, B., et al. Mind2Web: Towards a Generalist Agent for the Web. NeurIPS 2023 (Spotlight). arXiv:2306.06070. https://arxiv.org/abs/2306.06070
+[^4]: Zhou, S., Xu, F. F., Zhu, H., et al. WebArena: A Realistic Web Environment for Building Autonomous Agents. ICLR 2024. arXiv:2307.13854. https://arxiv.org/abs/2307.13854
+[^5]: He, H., Yao, W., Ma, K., et al. WebVoyager: Building an End-to-End Web Agent with Large Multimodal Models. ACL 2024 (Main). arXiv:2401.13919. https://arxiv.org/abs/2401.13919
+[^6]: Xue, T., Qi, W., Shi, T., Song, C. H., Gou, B., Song, D., Sun, H., Su, Y. An Illusion of Progress? Assessing the Current State of Web Agents. COLM 2025. arXiv:2504.01382. https://arxiv.org/abs/2504.01382
+[^7]: Yao, S., Chen, H., Yang, J., Narasimhan, K. WebShop: Towards Scalable Real-World Web Interaction with Grounded Language Agents. NeurIPS 2022. arXiv:2207.01206. https://arxiv.org/abs/2207.01206
+[^8]: Allouah, A., Besbes, O., Figueroa, J. D., Kanoria, Y., Kumar, A. What Is Your AI Agent Buying? Evaluation, Biases, Model Dependence, & Emerging Implications for Agentic E-Commerce. arXiv:2508.02630. https://arxiv.org/abs/2508.02630
+[^9]: Xie, T., Zhang, D., Chen, J., et al. OSWorld: Benchmarking Multimodal Agents for Open-Ended Tasks in Real Computer Environments. NeurIPS 2024 (Datasets and Benchmarks Track). arXiv:2404.07972. https://arxiv.org/abs/2404.07972
+[^10]: Rawles, C., Clinckemaillie, S., Chang, Y., et al. AndroidWorld: A Dynamic Benchmarking Environment for Autonomous Agents. ICLR 2025. arXiv:2405.14573. https://arxiv.org/abs/2405.14573
+[^11]: Wang, P., Wu, Y., Song, X., et al. ShopSimulator: Evaluating and Exploring RL-Driven LLM Agent for Shopping Assistants. arXiv:2601.18225. https://arxiv.org/abs/2601.18225
+[^12]: Wang, J., Xiao, K., Zhao, H., et al. ProductResearch: Training E-Commerce Deep Research Agents via Multi-Agent Synthetic Trajectory Distillation. arXiv:2602.23716. https://arxiv.org/abs/2602.23716
+[^13]: Yu, Z., Xiao, K., Zhao, H., et al. Shopping Companion: Benchmarking and Training LLM Agents for Long-Horizon Preference-Grounded E-Commerce Tasks. arXiv:2603.14864. https://arxiv.org/abs/2603.14864
+[^14]: 京东云开发者社区. 商家智能助手：多智能体在电商垂域的技术探索. https://developer.jdcloud.com/article/4196
+[^15]: niespodd. browser-fingerprinting: Analysis of Bot Protection Systems. GitHub. https://github.com/niespodd/browser-fingerprinting
+[^16]: Browserless. Anti-Detection Techniques: 2026 Comprehensive Guide. https://www.browserless.io/blog/anti-detection-techniques-2026-guide
+[^17]: Chrome for Developers. Chrome DevTools MCP server for AI agents, 2025. https://developer.chrome.com/blog/chrome-devtools-mcp
+[^18]: vivo 官方支持. 手机贴钢化膜后，指纹无法录入、指纹解锁失灵或不灵敏. https://www.vivo.com.cn/service/questions/all?categoryId=155&questionId=2001
+[^19]: 荣耀官方支持. 手机指纹解锁失败问题排查指南 / 手机指纹录入失败怎么办. https://www.honor.com/cn/support/content/zh-cn00410382/
+[^20]: Google. Chrome DevTools Protocol Documentation. https://chromedevtools.github.io/devtools-protocol/
 
 ---
 
