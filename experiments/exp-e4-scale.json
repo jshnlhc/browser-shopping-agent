@@ -1,0 +1,350 @@
+{
+  "experiment": "E4: 多平台 × 多条件 规模化对照实验",
+  "design": {
+    "repeats": 3,
+    "cooldownMs": 20000,
+    "matrix": [
+      {
+        "pid": "taobao",
+        "name": "淘宝",
+        "uaCover": true
+      },
+      {
+        "pid": "pdd",
+        "name": "拼多多",
+        "uaCover": true
+      },
+      {
+        "pid": "jd",
+        "name": "京东",
+        "uaCover": false
+      }
+    ]
+  },
+  "safety": [
+    "京东不执行 UA 覆盖",
+    "每次观测间隔 20000ms",
+    "仅只读任务"
+  ],
+  "rows": [
+    {
+      "platform": "淘宝",
+      "pid": "taobao",
+      "condition": "native",
+      "textLen": 218,
+      "goodsMatches": 0,
+      "verifyWall": false,
+      "finalUrl": "https://s.taobao.com/search?q=%E9%92%A2%E5%8C%96%E8%86%9C",
+      "requests": 245,
+      "elapsedMs": 28329,
+      "repeat": 1
+    },
+    {
+      "platform": "淘宝",
+      "pid": "taobao",
+      "condition": "headless",
+      "textLen": 223,
+      "goodsMatches": 0,
+      "verifyWall": false,
+      "finalUrl": "https://s.taobao.com/search?q=%E9%92%A2%E5%8C%96%E8%86%9C",
+      "requests": 210,
+      "elapsedMs": 28855,
+      "repeat": 1
+    },
+    {
+      "platform": "淘宝",
+      "pid": "taobao",
+      "condition": "native",
+      "textLen": 6548,
+      "goodsMatches": 31,
+      "verifyWall": false,
+      "finalUrl": "https://s.taobao.com/search?page=1&q=%E9%92%A2%E5%8C%96%E8%86%9C&tab=all",
+      "requests": 380,
+      "elapsedMs": 8297,
+      "repeat": 2
+    },
+    {
+      "platform": "淘宝",
+      "pid": "taobao",
+      "condition": "headless",
+      "textLen": 223,
+      "goodsMatches": 0,
+      "verifyWall": false,
+      "finalUrl": "https://s.taobao.com/search?q=%E9%92%A2%E5%8C%96%E8%86%9C",
+      "requests": 184,
+      "elapsedMs": 28161,
+      "repeat": 2
+    },
+    {
+      "platform": "淘宝",
+      "pid": "taobao",
+      "condition": "native",
+      "textLen": 6335,
+      "goodsMatches": 30,
+      "verifyWall": false,
+      "finalUrl": "https://s.taobao.com/search?page=1&q=%E9%92%A2%E5%8C%96%E8%86%9C&tab=all",
+      "requests": 380,
+      "elapsedMs": 8289,
+      "repeat": 3
+    },
+    {
+      "platform": "淘宝",
+      "pid": "taobao",
+      "condition": "headless",
+      "textLen": 223,
+      "goodsMatches": 0,
+      "verifyWall": false,
+      "finalUrl": "https://s.taobao.com/search?q=%E9%92%A2%E5%8C%96%E8%86%9C",
+      "requests": 190,
+      "elapsedMs": 28149,
+      "repeat": 3
+    },
+    {
+      "platform": "拼多多",
+      "pid": "pdd",
+      "condition": "native",
+      "textLen": 1930,
+      "goodsMatches": 33,
+      "verifyWall": false,
+      "finalUrl": "https://mobile.yangkeduo.com/search_result.html?search_key=%E9%92%A2%E5%8C%96%E8%86%9C",
+      "requests": 109,
+      "elapsedMs": 6430,
+      "repeat": 1
+    },
+    {
+      "platform": "拼多多",
+      "pid": "pdd",
+      "condition": "headless",
+      "textLen": 1962,
+      "goodsMatches": 36,
+      "verifyWall": false,
+      "finalUrl": "https://mobile.yangkeduo.com/search_result.html?search_key=%E9%92%A2%E5%8C%96%E8%86%9C",
+      "requests": 108,
+      "elapsedMs": 6195,
+      "repeat": 1
+    },
+    {
+      "platform": "拼多多",
+      "pid": "pdd",
+      "condition": "native",
+      "textLen": 1961,
+      "goodsMatches": 32,
+      "verifyWall": false,
+      "finalUrl": "https://mobile.yangkeduo.com/search_result.html?search_key=%E9%92%A2%E5%8C%96%E8%86%9C",
+      "requests": 109,
+      "elapsedMs": 6172,
+      "repeat": 2
+    },
+    {
+      "platform": "拼多多",
+      "pid": "pdd",
+      "condition": "headless",
+      "textLen": 1949,
+      "goodsMatches": 33,
+      "verifyWall": false,
+      "finalUrl": "https://mobile.yangkeduo.com/search_result.html?search_key=%E9%92%A2%E5%8C%96%E8%86%9C",
+      "requests": 109,
+      "elapsedMs": 6171,
+      "repeat": 2
+    },
+    {
+      "platform": "拼多多",
+      "pid": "pdd",
+      "condition": "native",
+      "textLen": 1959,
+      "goodsMatches": 32,
+      "verifyWall": false,
+      "finalUrl": "https://mobile.yangkeduo.com/search_result.html?search_key=%E9%92%A2%E5%8C%96%E8%86%9C",
+      "requests": 109,
+      "elapsedMs": 6214,
+      "repeat": 3
+    },
+    {
+      "platform": "拼多多",
+      "pid": "pdd",
+      "condition": "headless",
+      "textLen": 1971,
+      "goodsMatches": 28,
+      "verifyWall": false,
+      "finalUrl": "https://mobile.yangkeduo.com/search_result.html?search_key=%E9%92%A2%E5%8C%96%E8%86%9C",
+      "requests": 108,
+      "elapsedMs": 6192,
+      "repeat": 3
+    },
+    {
+      "platform": "京东",
+      "pid": "jd",
+      "condition": "native_only",
+      "textLen": 5055,
+      "goodsMatches": 12,
+      "verifyWall": false,
+      "finalUrl": "https://search.jd.com/Search?keyword=%E9%92%A2%E5%8C%96%E8%86%9C",
+      "requests": 273,
+      "elapsedMs": 8407,
+      "repeat": 1
+    },
+    {
+      "platform": "京东",
+      "pid": "jd",
+      "condition": "native_only",
+      "textLen": 5031,
+      "goodsMatches": 12,
+      "verifyWall": false,
+      "finalUrl": "https://search.jd.com/Search?keyword=%E9%92%A2%E5%8C%96%E8%86%9C",
+      "requests": 250,
+      "elapsedMs": 6168,
+      "repeat": 2
+    },
+    {
+      "platform": "京东",
+      "pid": "jd",
+      "condition": "native_only",
+      "textLen": 5044,
+      "goodsMatches": 12,
+      "verifyWall": false,
+      "finalUrl": "https://search.jd.com/Search?keyword=%E9%92%A2%E5%8C%96%E8%86%9C",
+      "requests": 250,
+      "elapsedMs": 6200,
+      "repeat": 3
+    }
+  ],
+  "summary": {
+    "淘宝|native": {
+      "textLen": {
+        "n": 3,
+        "mean": 4367,
+        "sd": 3594.7,
+        "min": 218,
+        "max": 6548
+      },
+      "goodsMatches": {
+        "n": 3,
+        "mean": 20.3,
+        "sd": 17.6,
+        "min": 0,
+        "max": 31
+      },
+      "requests": {
+        "n": 3,
+        "mean": 335,
+        "sd": 77.9,
+        "min": 245,
+        "max": 380
+      },
+      "verifyWalls": 0,
+      "n": 3
+    },
+    "淘宝|headless": {
+      "textLen": {
+        "n": 3,
+        "mean": 223,
+        "sd": 0,
+        "min": 223,
+        "max": 223
+      },
+      "goodsMatches": {
+        "n": 3,
+        "mean": 0,
+        "sd": 0,
+        "min": 0,
+        "max": 0
+      },
+      "requests": {
+        "n": 3,
+        "mean": 194.7,
+        "sd": 13.6,
+        "min": 184,
+        "max": 210
+      },
+      "verifyWalls": 0,
+      "n": 3
+    },
+    "拼多多|native": {
+      "textLen": {
+        "n": 3,
+        "mean": 1950,
+        "sd": 17.3,
+        "min": 1930,
+        "max": 1961
+      },
+      "goodsMatches": {
+        "n": 3,
+        "mean": 32.3,
+        "sd": 0.6,
+        "min": 32,
+        "max": 33
+      },
+      "requests": {
+        "n": 3,
+        "mean": 109,
+        "sd": 0,
+        "min": 109,
+        "max": 109
+      },
+      "verifyWalls": 0,
+      "n": 3
+    },
+    "拼多多|headless": {
+      "textLen": {
+        "n": 3,
+        "mean": 1960.7,
+        "sd": 11.1,
+        "min": 1949,
+        "max": 1971
+      },
+      "goodsMatches": {
+        "n": 3,
+        "mean": 32.3,
+        "sd": 4,
+        "min": 28,
+        "max": 36
+      },
+      "requests": {
+        "n": 3,
+        "mean": 108.3,
+        "sd": 0.6,
+        "min": 108,
+        "max": 109
+      },
+      "verifyWalls": 0,
+      "n": 3
+    },
+    "京东|native_only": {
+      "textLen": {
+        "n": 3,
+        "mean": 5043.3,
+        "sd": 12,
+        "min": 5031,
+        "max": 5055
+      },
+      "goodsMatches": {
+        "n": 3,
+        "mean": 12,
+        "sd": 0,
+        "min": 12,
+        "max": 12
+      },
+      "requests": {
+        "n": 3,
+        "mean": 257.7,
+        "sd": 13.3,
+        "min": 250,
+        "max": 273
+      },
+      "verifyWalls": 0,
+      "n": 3
+    }
+  },
+  "paired": {
+    "淘宝": {
+      "nativeMeanLen": 4367,
+      "headlessMeanLen": 223,
+      "dropRatio": 0.9489
+    },
+    "拼多多": {
+      "nativeMeanLen": 1950,
+      "headlessMeanLen": 1960.7,
+      "dropRatio": -0.0055
+    }
+  }
+}
