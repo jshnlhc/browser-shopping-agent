@@ -1,0 +1,223 @@
+{
+  "generatedAt": "2026-09-25T12:31:06.215Z",
+  "sources": [
+    {
+      "file": ".\\exp-e4-scale.json",
+      "label": "E4",
+      "n": 15
+    },
+    {
+      "file": ".\\batches\\batch-20260925-202130.json",
+      "label": "20260925-202130",
+      "n": 15
+    }
+  ],
+  "totalObservations": 30,
+  "summary": {
+    "淘宝|native": {
+      "n": 6,
+      "sources": [
+        "E4",
+        "20260925-202130"
+      ],
+      "textLen": {
+        "n": 6,
+        "mean": 5413.8,
+        "sd": 2546.9,
+        "median": 6432,
+        "min": 218,
+        "max": 6548,
+        "cv": 0.47
+      },
+      "goodsMatches": {
+        "n": 6,
+        "mean": 24.5,
+        "sd": 12.1,
+        "median": 29.5,
+        "min": 0,
+        "max": 31,
+        "cv": 0.493
+      },
+      "requests": {
+        "n": 6,
+        "mean": 387.7,
+        "sd": 80.9,
+        "median": 390,
+        "min": 245,
+        "max": 488,
+        "cv": 0.209
+      },
+      "verifyWalls": 0
+    },
+    "淘宝|headless": {
+      "n": 6,
+      "sources": [
+        "E4",
+        "20260925-202130"
+      ],
+      "textLen": {
+        "n": 6,
+        "mean": 223.3,
+        "sd": 0.8,
+        "median": 223,
+        "min": 223,
+        "max": 225,
+        "cv": 0.004
+      },
+      "goodsMatches": {
+        "n": 6,
+        "mean": 0,
+        "sd": 0,
+        "median": 0,
+        "min": 0,
+        "max": 0,
+        "cv": null
+      },
+      "requests": {
+        "n": 6,
+        "mean": 208.2,
+        "sd": 43.2,
+        "median": 189.5,
+        "min": 182,
+        "max": 294,
+        "cv": 0.208
+      },
+      "verifyWalls": 0
+    },
+    "拼多多|native": {
+      "n": 6,
+      "sources": [
+        "E4",
+        "20260925-202130"
+      ],
+      "textLen": {
+        "n": 6,
+        "mean": 1921.5,
+        "sd": 51.9,
+        "median": 1938,
+        "min": 1823,
+        "max": 1961,
+        "cv": 0.027
+      },
+      "goodsMatches": {
+        "n": 6,
+        "mean": 26.7,
+        "sd": 7.3,
+        "median": 30,
+        "min": 17,
+        "max": 33,
+        "cv": 0.274
+      },
+      "requests": {
+        "n": 6,
+        "mean": 115.7,
+        "sd": 8.2,
+        "median": 112.5,
+        "min": 109,
+        "max": 128,
+        "cv": 0.071
+      },
+      "verifyWalls": 0
+    },
+    "拼多多|headless": {
+      "n": 6,
+      "sources": [
+        "E4",
+        "20260925-202130"
+      ],
+      "textLen": {
+        "n": 6,
+        "mean": 1946.3,
+        "sd": 17.3,
+        "median": 1941.5,
+        "min": 1929,
+        "max": 1971,
+        "cv": 0.009
+      },
+      "goodsMatches": {
+        "n": 6,
+        "mean": 30,
+        "sd": 5.2,
+        "median": 31,
+        "min": 21,
+        "max": 36,
+        "cv": 0.173
+      },
+      "requests": {
+        "n": 6,
+        "mean": 111,
+        "sd": 6.9,
+        "median": 108,
+        "min": 108,
+        "max": 125,
+        "cv": 0.062
+      },
+      "verifyWalls": 0
+    },
+    "京东|native_only": {
+      "n": 6,
+      "sources": [
+        "E4",
+        "20260925-202130"
+      ],
+      "textLen": {
+        "n": 6,
+        "mean": 5054.2,
+        "sd": 29.3,
+        "median": 5049.5,
+        "min": 5026,
+        "max": 5107,
+        "cv": 0.006
+      },
+      "goodsMatches": {
+        "n": 6,
+        "mean": 12.8,
+        "sd": 1,
+        "median": 12.5,
+        "min": 12,
+        "max": 14,
+        "cv": 0.077
+      },
+      "requests": {
+        "n": 6,
+        "mean": 275.5,
+        "sd": 44.2,
+        "median": 258,
+        "min": 250,
+        "max": 364,
+        "cv": 0.16
+      },
+      "verifyWalls": 0
+    }
+  },
+  "comparisons": {
+    "淘宝": {
+      "nativeN": 6,
+      "headlessN": 6,
+      "nativeMean": 5413.8,
+      "headlessMean": 223.3,
+      "dropRatio": 0.9587,
+      "test": {
+        "t": 4.992,
+        "df": 5,
+        "cohensD": 2.882,
+        "meanDiff": 5190.5,
+        "note": "df<10 时 t 分布近似不可靠，此处仅作效应量参考"
+      }
+    },
+    "拼多多": {
+      "nativeN": 6,
+      "headlessN": 6,
+      "nativeMean": 1921.5,
+      "headlessMean": 1946.3,
+      "dropRatio": -0.0129,
+      "test": {
+        "t": -1.112,
+        "df": 6.09,
+        "cohensD": -0.642,
+        "meanDiff": -24.8,
+        "note": "df<10 时 t 分布近似不可靠，此处仅作效应量参考"
+      }
+    }
+  }
+}

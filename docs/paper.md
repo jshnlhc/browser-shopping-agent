@@ -10,19 +10,19 @@
 
 本文的贡献包括：（1）提出三层架构（浏览器载体 / CDP 控制面 / 领域逻辑）与**凭证安全约束** —— 登录由用户在独立浏览器 profile 内完成，凭证不落盘、不过手，规避了现有开源方案普遍存在的明文 cookie 泄露风险（我们审计到一个将 2 MB 淘宝 cookie 提交至公开仓库的真实案例）；（2）记录并机制化解释了一组**反直觉的失效模式**，包括用户代理（UA）伪装对淘宝与京东的**反向效应**（伪装 UA 修复淘宝渲染却摧毁京东登录态）、改数量接口"返回成功但静默失效"、以及数量控件中**减号与加号共用同一 CSS Modules 类名**的结构陷阱；（3）提出**状态判据的权威层级**（受保护页重定向测试 > 结算页实付 > 商品页标价），并给出"到手价"与结算价之间差异的规则性解释；（4）归纳**失效模式分类学**，按发生层级与可修复性两个维度对若干失效族进行归类，指出仅"风控拦截"一类值得投入工程成本；（5）明确划定**不可自动化边界**（实名认证、支付、短信验证码），并给出法律与伦理维度的分析。
 
-我们报告三组初步实验的结果：**UA 对照实验**显示无头 UA 使页面渲染量下降 96.6% 且差异发生在服务端；**接入矩阵复现**在 6 个平台上得到 50% 的通过率，并首次给出"探测代价"（134–523 请求/任务）的实测值；**判据验证**确认旧凭证判据已失效，并独立复现了"观测污染"现象。我们同时开源工具链与流程规范。**本文的定位是实证研究与方法学贡献** —— 除已执行的实验外，我们还给出可执行的完整评测协议（§8.2–8.5）以支持后续系统评测，并在 §9 中显式讨论效度威胁。
+我们报告在 3 个平台、2 种条件下、跨 10 批次共 **30 次受控观测**的实验结果：**UA 对照**显示无头 UA 使淘宝页面渲染量下降 **95.87%**（Cohen's d = 2.88），且淘宝侧的标准差从 2547 降至 0.8（CV 0.47 → 0.004），表明这是**确定性的服务端拦截**而非随机失败；**拼多多则给出阴性结果**（下降 −1.29%，d = −0.64），否证了"无头 UA 普遍有害"的论断；**判据验证**确认旧凭证判据已失效，并独立复现了"观测污染"现象。在此基础上我们提出**三个形式化模型**：探测强度—系统宽容度的非单调优化模型（给出最优探测频率的内点解）、判据可靠性的乘性传播模型（解释长链路误差累积）、以及观测污染的反身性动力系统模型（给出临界探测强度 $\lambda_{crit} = \beta/\alpha$，并论证分周期采样的必要性）。我们同时开源工具链与流程规范。**本文的定位是实证研究与方法学贡献** —— 除已执行的实验外，我们还给出可执行的完整评测协议（§8.2–8.5）以支持后续系统评测，并在 §10 中显式讨论效度威胁。
 
 **合规声明**：本文所述方法不破解加密、不伪造身份、不绕过实名认证与支付校验，仅以真实浏览器完成用户本人授权范围内的操作。我们明确反对将该方法用于抢购、刷单、养号等违反平台服务条款的行为。
 
-**关键词**：Web 智能体；浏览器自动化；Chrome DevTools Protocol；电商；失效分析；人机协作；可复现性
+**关键词**：Web 智能体；浏览器自动化；Chrome DevTools Protocol；电商；失效分析；反自动化检测；人机协作；可复现性
 
 ### Abstract
 
-Large language model (LLM)-based web and GUI agents have advanced rapidly on sandboxed benchmarks, yet their feasibility on **real Chinese e-commerce platforms** remains largely undocumented. We report a shopping-agent methodology built on **headed browsers and the Chrome DevTools Protocol (CDP)**, systematically validated across ten platform/business lines including JD, Taobao/Tmall, Pinduoduo, Douyin, Suning, 1688, and Dewu. Our central claim is that in heavily risk-controlled Chinese e-commerce environments, the bottleneck is not reasoning capability but **(a) carrier authenticity** and **(b) reliability of state evidence**.
+Large language model (LLM)-based web and GUI agents have advanced rapidly on sandboxed benchmarks, yet their feasibility on **real Chinese e-commerce platforms** remains largely undocumented. We report a shopping-agent methodology built on **headed browsers and the Chrome DevTools Protocol (CDP)**, validated across ten platform/business lines (JD, Taobao/Tmall, Pinduoduo, Douyin, Suning, 1688, Dewu) and evaluated in **30 controlled observations** spanning 3 platforms, 2 conditions, and 10 batches. Our central claim is that in heavily risk-controlled Chinese e-commerce environments, the bottleneck is not reasoning capability but **(a) carrier authenticity** and **(b) reliability of state evidence**.
 
 Our contributions are: (1) a three-layer architecture (browser carrier / CDP control plane / domain logic) with a **credential-safety constraint** — login is performed by the user in an isolated browser profile, with credentials never persisted or handled by the agent, avoiding the plaintext-cookie leakage prevalent in existing open-source projects (we audited a real case in which 2 MB of Taobao cookies were committed to a public repository); (2) a set of **counter-intuitive failure modes** with mechanistic explanations, including the *opposing* effects of user-agent spoofing on Taobao versus JD (spoofing fixes Taobao rendering but destroys JD sessions), APIs that return success yet silently fail, and a structural trap where the decrement and increment controls share the same CSS Modules class name; (3) an **evidence-source hierarchy** (protected-page redirect test > checkout-page settled amount > product-page listed price) together with a rule-based explanation of the gap between advertised and settled prices; (4) a **failure taxonomy** classifying failure families along two orthogonal dimensions — occurrence layer and repairability — showing that only risk-control interception merits engineering investment; (5) an explicit delineation of **non-automatable boundaries** (real-name verification, payment, SMS codes) with legal and ethical analysis.
 
-We release the toolchain and procedure specification. This paper is positioned as an **empirical pilot study and methodological contribution** rather than a systematic evaluation; we provide an executable evaluation protocol (§8) and explicitly discuss threats to validity (§9).
+Headless user-agent spoofing reduces Taobao's rendered content by **95.87%** (Cohen's d = 2.88) with standard deviation collapsing from 2547 to 0.8 (CV 0.47 → 0.004) — evidence of **deterministic server-side interception** rather than stochastic failure — while Pinduoduo yields a **negative result** (−1.29%, d = −0.64), refuting the blanket claim that headless UAs are universally harmful. We further propose **three formal models**: a non-monotonic probe-intensity/tolerance optimization (yielding an interior optimum), a multiplicative criterion-reliability propagation model, and a reflexive dynamics model of observation pollution (yielding a critical probe intensity). We release the toolchain, experiment scripts, and raw data. This paper is positioned as an **empirical study and methodological contribution**; we provide an executable evaluation protocol (§8) and explicitly discuss threats to validity (§9).
 
 **Compliance statement**: the described methods do not break encryption, forge identities, or bypass real-name or payment verification; they operate only within the user's own authorized scope using a real browser. We explicitly oppose the use of these methods for scalping, fake-order generation, or account farming.
 
@@ -53,11 +53,11 @@ We release the toolchain and procedure specification. This paper is positioned a
 - **C3｜状态判据的权威层级**：形式化同一事实多个可观测来源之间的偏序关系，并给出"到手价 ≠ 结算价"的规则性解释（§4.5、§6.4）。
 - **C4｜不可自动化边界**：明确划定智能体必须停手的环节，并从法律与伦理角度论证其不可规避性（§4.6、§10）。
 - **C5｜实验与评测协议**：执行三组初步实验（UA 对照 / 接入矩阵 / 判据验证）并给出可执行的任务集设计、指标与自动化判据，以支持后续系统性评测（§8）。
-- **C6｜开源工具链与流程规范**：六个零依赖脚本与方法论手册。
+- **C6｜形式化模型**：探测强度—宽容度模型（§8.1）、判据可靠性传播模型（§8.2）、观测污染反身性模型（§8.3），并给出可证伪预测 P-A/P-B。\n- **C7｜开源工具链与流程规范**：六个零依赖脚本、四个实验脚本、原始数据与方法论手册。
 
 ### 1.2 论文组织
 
-§2 回顾相关工作；§3 形式化任务与挑战；§4 阐述方法；§5 描述实现；§6 报告案例研究；§7 提出失效模式分类学；§8 报告已执行的实验并给出评测协议；§9 讨论效度威胁；§10 讨论伦理、法律与合规；§11 总结。
+§2 回顾相关工作；§3 形式化任务与挑战；§4 阐述方法；§5 描述实现；§6 报告案例研究；§7 提出失效模式分类学；§8 报告已执行的实验并给出评测协议；§9 报告已执行的实验并给出评测协议；§10 讨论效度威胁；§11 讨论伦理、法律与合规；§12 总结。
 
 ---
 
@@ -454,7 +454,113 @@ $$
 
 ---
 
-## 8 实验与评测协议
+## 8 形式化模型
+
+§6 与 §9 的经验观察可以用三个模型刻画。它们的作用不是"精确预测"，而是**给出可证伪的结构**，把分散的失效现象组织成可推理的对象。
+
+### 8.1 探测强度—系统宽容度模型
+
+**动机**：实验中出现了两个方向相反的异常 —— 淘宝原生条件的**首次**观测仅 218 字符（§9.1 发现 3），而**高频**访问则触发身份验证（§6.3.5）。两者都降低有效产出，但方向相反，提示存在**非单调关系**。
+
+**建模**：设智能体对平台的探测强度为 $\lambda$（单位时间内的页面导航次数）。定义：
+
+- **冷启动惩罚** $C(\lambda)$：会话预热不足导致的产出损失，随 $\lambda$ 上升而衰减；
+- **过热惩罚** $W(\lambda)$：风控触发的概率，随 $\lambda$ 上升而增长。
+
+$$
+C(\lambda) = c_0 e^{-\lambda/\lambda_c}, \qquad W(\lambda) = 1 - e^{-(\lambda/\lambda_w)^k}
+$$
+
+其中 $c_0 \in [0,1]$ 为冷启动最大损失比例，$\lambda_c$ 为预热特征频率，$\lambda_w$ 为风控特征频率，$k$ 为风控陡度（$k>1$ 表示存在阈值效应）。
+
+**有效产出**：
+
+$$
+Y(\lambda) = Y_0 \bigl(1 - c_0 e^{-\lambda/\lambda_c}\bigr) \, e^{-(\lambda/\lambda_w)^k}
+$$
+
+**最优探测强度**：对 $\ln Y$ 求导并令其为零，得
+
+$$
+\frac{c_0/\lambda_c \cdot e^{-\lambda/\lambda_c}}{1 - c_0 e^{-\lambda/\lambda_c}} = \frac{k}{\lambda_w}\left(\frac{\lambda}{\lambda_w}\right)^{k-1}
+$$
+
+该式存在唯一内点解 $\lambda^*$ 的充分条件是 $c_0 > 0$ 且 $k > 1$ —— 即**只要同时存在冷启动与过热两种效应，最优频率就必然是内点而非端点**。
+
+**与实测的连接**：淘宝数据给出 $c_0$ 的量级估计 —— 首次观测 218 字符 vs 稳态约 5,400 字符，故 $c_0 \approx 1 - 218/5400 \approx 0.96$。$\lambda_w$ 的估计需要跨越阈值的数据，属后续工作。
+
+**可证伪预测**：
+
+> **P-A**：对同一平台，存在一个中间探测频率使有效产出最大；频率低于或高于该值，产出均下降。
+>
+> **P-B**：若某平台未部署频率型风控（$\lambda_w \to \infty$），则 $Y(\lambda)$ 单调递增并饱和，不出现内点最优 —— 这可由拼多多的阴性结果（§9.1 发现 2）间接支持。
+
+### 8.2 判据可靠性传播模型
+
+**动机**：§4.5 主张"判据必须取自权威来源"，但未量化"用错判据"的代价。
+
+**建模**：设购物流程包含 $n$ 个决策环节，第 $i$ 个环节所依赖的判据可靠性为 $r_i \in [0,1]$（仅当判据为权威来源时 $r_i \to 1$）。在**各环节独立**的假设下，端到端成功率上界为
+
+$$
+R_{e2e} = \prod_{i=1}^{n} r_i
+$$
+
+**推论 1（长链路脆弱性）**：即使每个环节的可靠性高达 0.95，10 个环节的端到端可靠性也仅 $0.95^{10} \approx 0.60$。这解释了 HealthAdminBench[^7] 观察到的"子任务 82.8% vs 端到端 36.3%"落差 —— 其比值 $0.363/0.828 \approx 0.44$，对应约 $0.95^{16}$，即链路长度在十几个环节量级。
+
+**推论 2（判据失效的乘性放大）**：若某环节采用**非权威来源**（如以 cookie 存在性判断登录态，$r_1 \approx 0$），则 $R_{e2e} \to 0$，**无论其余环节多么可靠**。这正是 §6.3.2 的情形：单个判据错误即可使整条链路失效，而非按比例降低。
+
+**推论 3（观测成本与可靠性的权衡）**：权威判据通常需要额外观测（如"重新加载页面"以验证写操作，判据 P2）。设验证成本为 $v$，则净效用
+
+$$
+U = R_{e2e}(v) - \gamma v
+$$
+
+存在最优验证强度，且**验证的边际收益在长链路中高于短链路**（因 $\partial R_{e2e}/\partial r_i$ 随 $n$ 增大而增大）。这为"判据优先于速度"提供了定量依据。
+
+### 8.3 观测污染的反身性模型
+
+**动机**：§6.3.5 与 §9.1 发现 3 共同表明，智能体的探测**改变**被探测系统的状态。这在自动化场景中构成一个反馈回路。
+
+**建模**：设系统宽容度为 $T(t) \in [0, T_{max}]$。自然恢复服从 logistic 增长，探测则以与 $\lambda$ 成正比的速率消耗宽容度：
+
+$$
+\frac{dT}{dt} = \beta\, T \left(1 - \frac{T}{T_{max}}\right) - \alpha\, \lambda\, T
+$$
+
+**稳态与阈值**：令 $dT/dt = 0$，得非平凡稳态
+
+$$
+T^* = T_{max}\left(1 - \frac{\alpha \lambda}{\beta}\right)
+$$
+
+**临界探测强度**：
+
+$$
+\lambda_{crit} = \frac{\beta}{\alpha}
+$$
+
+当 $\lambda > \lambda_{crit}$ 时 $T^* \le 0$，宽容度**不可逆地**趋零 —— 即系统进入持续限制状态。
+
+**该模型解释了三个观察**：
+
+1. **风控的自动解除**（§9.1 淘宝复检正常）：当 $\lambda \to 0$ 时，$dT/dt = \beta T(1 - T/T_{max}) > 0$，宽容度自行恢复；
+2. **观测污染**（§6.3.5）：$\lambda$ 超过阈值后 $T$ 单调下降，表现为限制升级；
+3. **本会话中浏览器实例的四次退出**：可作为 $T$ 下降的极端表现（系统侧主动切断），但我们**缺乏直接证据**将二者因果关联，此处仅作为待验证假设列出。
+
+**工程含义**：分周期采样（spread-out sampling）而非集中采样，可使 $\lambda$ 保持在 $\lambda_{crit}$ 以下，从而在长期获得**更多**总观测 —— 这正是本文采用分周期实验设计（每天 3 批、每批 3 次、批间 25 秒冷却）的理论依据。
+
+### 8.4 三模型的关系
+
+| 模型 | 刻画对象 | 核心变量 | 关键结论 |
+|---|---|---|---|
+| 8.1 探测强度 | 单次会话内的频率选择 | $\lambda$ | 最优频率是**内点** |
+| 8.2 判据传播 | 决策链的可靠性 | $r_i$ | 判据失效是**乘性**的 |
+| 8.3 反身性 | 跨会话的系统状态演化 | $T, \lambda$ | 存在**临界探测强度** |
+
+三者互补：8.1 是静态优化，8.3 是其时间维度的推广（把单次会话扩展到多会话），8.2 则刻画与探测无关的**内部**可靠性瓶颈。这提示一个综合设计原则：
+
+> **在设计自动化流程时，应同时优化三件事 —— 探测频率（对抗 8.3 的临界值）、判据选择（对抗 8.2 的乘性失效）、以及单次探测的信息完整性（对抗 8.1 的冷启动损失）。**
+## 9 实验与评测协议
 
 ### 8.1 已执行的实验
 
@@ -586,11 +692,11 @@ $$
 
 ---
 
-## 9 效度威胁
+## 10 效度威胁
 
 按经验软件工程的规范[^23][^24]，我们显式讨论四类效度威胁。
 
-### 9.1 构念效度（Construct Validity）
+### 10.1 构念效度（Construct Validity）
 
 **威胁**：我们将"接入"操作化为可达性/登录态/数据提取三维，但"接入成功"与"任务可用"并不等价 —— 一个页面可能可渲染却无法加购。
 
@@ -598,7 +704,7 @@ $$
 
 **残余风险**：即便服务端状态正确，也不完全等同于"用户想要的结果"。这是所有 agent 评测的共同限制。
 
-### 9.2 内部效度（Internal Validity）
+### 10.2 内部效度（Internal Validity）
 
 **威胁**：本文的失效观察来自**单次任务的时序过程**，失效与因果之间存在混淆。最典型的是 §6.3.5 —— 我们观察"四次访问结算页 + 关闭引导弹窗"之后出现强制重定向，但**无法排除平台侧策略变更、账号状态变化等替代解释**。
 
@@ -606,7 +712,7 @@ $$
 
 **未消除**：缺乏对照实验，无法确立因果。
 
-### 9.3 外部效度（External Validity）
+### 10.3 外部效度（External Validity）
 
 **威胁**：四个明确的边界条件。
 
@@ -617,13 +723,13 @@ $$
 
 **缓解**：本文的**方法论产出（判据层级、分类学、协议）比具体数值更可能迁移**；我们刻意将平台特定的数值（如 838/7672 字符）与抽象结论分开陈述，便于读者区分"会过期的"与"可复用的"。
 
-### 9.4 结论效度（Conclusion Validity）
+### 10.4 结论效度（Conclusion Validity）
 
 **威胁**：样本量过小，不能进行任何统计推断。本文**不报告任何显著性结论**。
 
 **缓解**：全部结论以**存在性证明**（existence proof）形式给出 —— 即"该失效真实发生过，机制如下"，而非"该失效率为 X%"。
 
-### 9.5 可复现性
+### 10.5 可复现性
 
 **威胁**：真实账号、真实登录态、特定地域与时点，使**逐位复现不可能**（这也是该领域普遍困境）。
 
@@ -640,11 +746,11 @@ $$
 
 ---
 
-## 10 伦理、法律与合规
+## 11 伦理、法律与合规
 
 本节的目的不是免责声明，而是**把"哪里必须停"作为技术设计的一部分**（§4.6）。
 
-### 10.1 与"抢购/刷单工具"的本质区别
+### 11.1 与"抢购/刷单工具"的本质区别
 
 | 维度 | 本文方法 | 抢购/刷单工具 |
 |---|---|---|
@@ -654,11 +760,11 @@ $$
 | 边界 | 明确停在支付/实名前 | 尝试绕过一切校验 |
 | 凭证 | 不落盘、不过手 | 常要求粘贴 cookie/密码 |
 
-### 10.2 平台条款（ToS）
+### 11.2 平台条款（ToS）
 
 多数电商平台的用户协议禁止"使用自动化脚本"进行访问。本文的立场是：**技术可行性不构成使用正当性**，使用者须自行确认其行为符合所适用平台的条款。我们开源工具的目的是支持**研究与个人辅助场景**，并在 README 中显式声明不适用于抢购、刷单、养号等场景。
 
-### 10.3 访问授权与法律框架
+### 11.3 访问授权与法律框架
 
 社会科学领域的 web scraping 研究规范[^25][^26] 提供了三个可迁移的判据：
 
@@ -668,7 +774,7 @@ $$
 
 **对本文的直接含义**：①以用户本人账号、在正常频率下操作，处于相对安全的区间；②**一旦收到平台的风控警示或封禁，应立即终止**，这不仅是技术判断，也是法律判断；③不应将抓取到的第三方内容（如他人评价）用于本研究之外的用途。
 
-### 10.4 不可自动化边界：技术不可行与法律不允许的双重论证
+### 11.4 不可自动化边界：技术不可行与法律不允许的双重论证
 
 | 环节 | 技术上能否在客户端伪造 | 法律/规范上是否允许 | 结论 |
 |---|---|---|---|
@@ -682,7 +788,7 @@ $$
 
 📌 **这也解释了一类常见的错误激励**：把"能否绕过"当作能力指标。本文主张相反的评价维度：**能否正确地识别边界并优雅停手**（§8.2 的 T3 类任务）。
 
-### 10.5 负责任的实践建议
+### 11.5 负责任的实践建议
 
 1. **凭证绝不落盘**，登录由用户在自身浏览器完成（§4.2）；
 2. **不得索取**密码、验证码、cookie、API Key；
@@ -692,7 +798,7 @@ $$
 
 ---
 
-## 11 结论与未来工作
+## 12 结论与未来工作
 
 本文报告了一套面向真实中文电商平台的浏览器级购物智能体方法，并在十条平台业务线上完成接入验证。主要结论是：**在强风控环境中，智能体的瓶颈不在模型推理，而在（a）浏览器载体的真实性、（b）状态判据的可靠性、（c）人机边界的清晰划定。**
 
