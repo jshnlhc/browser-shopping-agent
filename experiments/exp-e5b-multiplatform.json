@@ -1,0 +1,786 @@
+{
+  "experiment": "E5b: 修正版跨平台泛化验证（清缓存 + 多关键词 + 降级检测）",
+  "fixes": [
+    "Network.clearBrowserCache + setCacheDisabled",
+    "每平台多个不同关键词",
+    "平台间双倍冷却",
+    "降级检测"
+  ],
+  "keywords": [
+    "钢化膜",
+    "手机壳",
+    "数据线"
+  ],
+  "cooldownMs": 15000,
+  "totalObservations": 48,
+  "rows": [
+    {
+      "platform": "京东",
+      "pid": "jd",
+      "domain": "电商",
+      "keyword": "钢化膜",
+      "condition": "native",
+      "textLen": 195,
+      "verifyWall": false,
+      "finalUrl": "https://passport.jd.com/new/login.aspx?ReturnUrl=https%3A%2F%2Fsearch.jd.com%2FSearch%3Fkeyword%3D%25E9%2592%25A2%25E5%258C%2596%25E8%2586%259C&czLogin=1"
+    },
+    {
+      "platform": "京东",
+      "pid": "jd",
+      "domain": "电商",
+      "keyword": "钢化膜",
+      "condition": "headless",
+      "textLen": 195,
+      "verifyWall": false,
+      "finalUrl": "https://passport.jd.com/new/login.aspx?ReturnUrl=https%3A%2F%2Fsearch.jd.com%2FSearch%3Fkeyword%3D%25E9%2592%25A2%25E5%258C%2596%25E8%2586%259C&czLogin=1"
+    },
+    {
+      "platform": "京东",
+      "pid": "jd",
+      "domain": "电商",
+      "keyword": "手机壳",
+      "condition": "native",
+      "textLen": 195,
+      "verifyWall": false,
+      "finalUrl": "https://passport.jd.com/new/login.aspx?ReturnUrl=https%3A%2F%2Fsearch.jd.com%2FSearch%3Fkeyword%3D%25E6%2589%258B%25E6%259C%25BA%25E5%25A3%25B3&czLogin=1"
+    },
+    {
+      "platform": "京东",
+      "pid": "jd",
+      "domain": "电商",
+      "keyword": "手机壳",
+      "condition": "headless",
+      "textLen": 195,
+      "verifyWall": false,
+      "finalUrl": "https://passport.jd.com/new/login.aspx?ReturnUrl=https%3A%2F%2Fsearch.jd.com%2FSearch%3Fkeyword%3D%25E6%2589%258B%25E6%259C%25BA%25E5%25A3%25B3&czLogin=1"
+    },
+    {
+      "platform": "京东",
+      "pid": "jd",
+      "domain": "电商",
+      "keyword": "数据线",
+      "condition": "native",
+      "textLen": 195,
+      "verifyWall": false,
+      "finalUrl": "https://passport.jd.com/new/login.aspx?ReturnUrl=https%3A%2F%2Fsearch.jd.com%2FSearch%3Fkeyword%3D%25E6%2595%25B0%25E6%258D%25AE%25E7%25BA%25BF&czLogin=1"
+    },
+    {
+      "platform": "京东",
+      "pid": "jd",
+      "domain": "电商",
+      "keyword": "数据线",
+      "condition": "headless",
+      "textLen": 195,
+      "verifyWall": false,
+      "finalUrl": "https://passport.jd.com/new/login.aspx?ReturnUrl=https%3A%2F%2Fsearch.jd.com%2FSearch%3Fkeyword%3D%25E6%2595%25B0%25E6%258D%25AE%25E7%25BA%25BF&czLogin=1"
+    },
+    {
+      "platform": "淘宝",
+      "pid": "taobao",
+      "domain": "电商",
+      "keyword": "钢化膜",
+      "condition": "native",
+      "textLen": 160,
+      "verifyWall": false,
+      "finalUrl": "https://s.taobao.com/search?q=%E9%92%A2%E5%8C%96%E8%86%9C"
+    },
+    {
+      "platform": "淘宝",
+      "pid": "taobao",
+      "domain": "电商",
+      "keyword": "钢化膜",
+      "condition": "headless",
+      "textLen": 160,
+      "verifyWall": false,
+      "finalUrl": "https://s.taobao.com/search?q=%E9%92%A2%E5%8C%96%E8%86%9C"
+    },
+    {
+      "platform": "淘宝",
+      "pid": "taobao",
+      "domain": "电商",
+      "keyword": "手机壳",
+      "condition": "native",
+      "textLen": 160,
+      "verifyWall": false,
+      "finalUrl": "https://s.taobao.com/search?q=%E6%89%8B%E6%9C%BA%E5%A3%B3"
+    },
+    {
+      "platform": "淘宝",
+      "pid": "taobao",
+      "domain": "电商",
+      "keyword": "手机壳",
+      "condition": "headless",
+      "textLen": 160,
+      "verifyWall": false,
+      "finalUrl": "https://s.taobao.com/search?q=%E6%89%8B%E6%9C%BA%E5%A3%B3"
+    },
+    {
+      "platform": "淘宝",
+      "pid": "taobao",
+      "domain": "电商",
+      "keyword": "数据线",
+      "condition": "native",
+      "textLen": 160,
+      "verifyWall": false,
+      "finalUrl": "https://s.taobao.com/search?q=%E6%95%B0%E6%8D%AE%E7%BA%BF"
+    },
+    {
+      "platform": "淘宝",
+      "pid": "taobao",
+      "domain": "电商",
+      "keyword": "数据线",
+      "condition": "headless",
+      "textLen": 160,
+      "verifyWall": false,
+      "finalUrl": "https://s.taobao.com/search?q=%E6%95%B0%E6%8D%AE%E7%BA%BF"
+    },
+    {
+      "platform": "苏宁易购",
+      "pid": "suning",
+      "domain": "电商",
+      "keyword": "钢化膜",
+      "condition": "native",
+      "textLen": 2751,
+      "verifyWall": false,
+      "finalUrl": "https://search.suning.com/%E9%92%A2%E5%8C%96%E8%86%9C/"
+    },
+    {
+      "platform": "苏宁易购",
+      "pid": "suning",
+      "domain": "电商",
+      "keyword": "钢化膜",
+      "condition": "headless",
+      "textLen": 3185,
+      "verifyWall": false,
+      "finalUrl": "https://search.suning.com/%E9%92%A2%E5%8C%96%E8%86%9C/"
+    },
+    {
+      "platform": "苏宁易购",
+      "pid": "suning",
+      "domain": "电商",
+      "keyword": "手机壳",
+      "condition": "native",
+      "textLen": 2440,
+      "verifyWall": false,
+      "finalUrl": "https://search.suning.com/%E6%89%8B%E6%9C%BA%E5%A3%B3/"
+    },
+    {
+      "platform": "苏宁易购",
+      "pid": "suning",
+      "domain": "电商",
+      "keyword": "手机壳",
+      "condition": "headless",
+      "textLen": 2440,
+      "verifyWall": false,
+      "finalUrl": "https://search.suning.com/%E6%89%8B%E6%9C%BA%E5%A3%B3/"
+    },
+    {
+      "platform": "苏宁易购",
+      "pid": "suning",
+      "domain": "电商",
+      "keyword": "数据线",
+      "condition": "native",
+      "textLen": 3318,
+      "verifyWall": false,
+      "finalUrl": "https://search.suning.com/%E6%95%B0%E6%8D%AE%E7%BA%BF/"
+    },
+    {
+      "platform": "苏宁易购",
+      "pid": "suning",
+      "domain": "电商",
+      "keyword": "数据线",
+      "condition": "headless",
+      "textLen": 3318,
+      "verifyWall": false,
+      "finalUrl": "https://search.suning.com/%E6%95%B0%E6%8D%AE%E7%BA%BF/"
+    },
+    {
+      "platform": "唯品会",
+      "pid": "vip",
+      "domain": "电商",
+      "keyword": "钢化膜",
+      "condition": "native",
+      "textLen": 842,
+      "verifyWall": false,
+      "finalUrl": "https://passport.vip.com/login?src=https%3A%2F%2Fcategory.vip.com%2Fsuggest.php%3Fkeyword%3D%25E9%2592%25A2%25E5%258C%2596%25E8%2586%259C%26tfs_url%3D%252F%252Fmapi-pc.vip.com%252Fvips-mobile%252Frest%252Fshopping%252Fpc%252Fsearch%252Fproduct%252Frank"
+    },
+    {
+      "platform": "唯品会",
+      "pid": "vip",
+      "domain": "电商",
+      "keyword": "钢化膜",
+      "condition": "headless",
+      "textLen": 842,
+      "verifyWall": false,
+      "finalUrl": "https://passport.vip.com/login?src=https%3A%2F%2Fcategory.vip.com%2Fsuggest.php%3Fkeyword%3D%25E9%2592%25A2%25E5%258C%2596%25E8%2586%259C%26tfs_url%3D%252F%252Fmapi-pc.vip.com%252Fvips-mobile%252Frest%252Fshopping%252Fpc%252Fsearch%252Fproduct%252Frank"
+    },
+    {
+      "platform": "唯品会",
+      "pid": "vip",
+      "domain": "电商",
+      "keyword": "手机壳",
+      "condition": "native",
+      "textLen": 842,
+      "verifyWall": false,
+      "finalUrl": "https://passport.vip.com/login?src=https%3A%2F%2Fcategory.vip.com%2Fsuggest.php%3Fkeyword%3D%25E6%2589%258B%25E6%259C%25BA%25E5%25A3%25B3%26tfs_url%3D%252F%252Fmapi-pc.vip.com%252Fvips-mobile%252Frest%252Fshopping%252Fpc%252Fsearch%252Fproduct%252Frank"
+    },
+    {
+      "platform": "唯品会",
+      "pid": "vip",
+      "domain": "电商",
+      "keyword": "手机壳",
+      "condition": "headless",
+      "textLen": 842,
+      "verifyWall": false,
+      "finalUrl": "https://passport.vip.com/login?src=https%3A%2F%2Fcategory.vip.com%2Fsuggest.php%3Fkeyword%3D%25E6%2589%258B%25E6%259C%25BA%25E5%25A3%25B3%26tfs_url%3D%252F%252Fmapi-pc.vip.com%252Fvips-mobile%252Frest%252Fshopping%252Fpc%252Fsearch%252Fproduct%252Frank"
+    },
+    {
+      "platform": "唯品会",
+      "pid": "vip",
+      "domain": "电商",
+      "keyword": "数据线",
+      "condition": "native",
+      "textLen": 842,
+      "verifyWall": false,
+      "finalUrl": "https://passport.vip.com/login?src=https%3A%2F%2Fcategory.vip.com%2Fsuggest.php%3Fkeyword%3D%25E6%2595%25B0%25E6%258D%25AE%25E7%25BA%25BF%26tfs_url%3D%252F%252Fmapi-pc.vip.com%252Fvips-mobile%252Frest%252Fshopping%252Fpc%252Fsearch%252Fproduct%252Frank"
+    },
+    {
+      "platform": "唯品会",
+      "pid": "vip",
+      "domain": "电商",
+      "keyword": "数据线",
+      "condition": "headless",
+      "textLen": 842,
+      "verifyWall": false,
+      "finalUrl": "https://passport.vip.com/login?src=https%3A%2F%2Fcategory.vip.com%2Fsuggest.php%3Fkeyword%3D%25E6%2595%25B0%25E6%258D%25AE%25E7%25BA%25BF%26tfs_url%3D%252F%252Fmapi-pc.vip.com%252Fvips-mobile%252Frest%252Fshopping%252Fpc%252Fsearch%252Fproduct%252Frank"
+    },
+    {
+      "platform": "1688",
+      "pid": "alibaba",
+      "domain": "电商",
+      "keyword": "钢化膜",
+      "condition": "native",
+      "textLen": 59,
+      "verifyWall": false,
+      "finalUrl": "https://login.taobao.com/?redirect_url=https%3A%2F%2Flogin.1688.com%2Fmember%2Fjump.htm%3Ftarget%3Dhttps%253A%252F%252Flogin.1688.com%252Fmember%252FmarketSigninJump.htm%253FDone%253Dhttps%25253A%25252F%25252Fs.1688.com%25253A443%25252Fselloffer%25252Foffer_search.htm%25252F_____tmd_____%25252Fpage%25252Flogin_jump%25253Frand%25253DS3WxGHAgAt756EpznwfNzJq2AFA2qBNla3j6EINUS8We9dazM_iKElp8DwVSHZUevpC41Bx7RzivXIj9RnZgdg%252526_lgt_%25253Df71430cbaf985f6919dae3c49facc82d___122748___7cfcffd507b13c7932bb66791cf4e955___23e418033d927e424b4f6fd5d415899a628d070431fe1cf34a28ab7788f43494c6f8d27cad93ffc99b84bfa8fd4a3b6bbd2312ca8747a2df9ee9d810c5a781cf18d8464ae40a29479d670bca3e66d870192c2c4d7d103e8c5c20c42d2c115e4e2b1210656d87a63a2aad736075b354721ad5ad129ddf3b411e4ffc701e40a6c8c8901b2360241af3cdac02b7e260112b45349b8307fbb1752042eac283822622eeb351390b9451c1367c7fbcc717019690e99c8a5f648305c81e6f097b1d8f13053b2fc1b5ffe2e8b2f90c19889386af4f577549a96e3db10daaf43b1b7c335a94b4e792cdaba9378a726932116c6f703a166c0dd6f19485e8fa365359ab9e5af542296675a638ccc7fbb50bd759f55a7ede9a476c3516f4746939bf6779811d7471d7a2e2e9206e15ab8681758d1c7a%252526uuid%25253Df71430cbaf985f6919dae3c49facc82d&style=tao_custom&from=1688web"
+    },
+    {
+      "platform": "1688",
+      "pid": "alibaba",
+      "domain": "电商",
+      "keyword": "钢化膜",
+      "condition": "headless",
+      "textLen": 59,
+      "verifyWall": false,
+      "finalUrl": "https://login.taobao.com/?redirect_url=https%3A%2F%2Flogin.1688.com%2Fmember%2Fjump.htm%3Ftarget%3Dhttps%253A%252F%252Flogin.1688.com%252Fmember%252FmarketSigninJump.htm%253FDone%253Dhttps%25253A%25252F%25252Fs.1688.com%25253A443%25252Fselloffer%25252Foffer_search.htm%25252F_____tmd_____%25252Fpage%25252Flogin_jump%25253Frand%25253DS3WxGHAgAt756EpznwfNzJq2AFA2qBNla3j6EINUS8We9dazM_iKElp8DwVSHZUevpC41Bx7RzivXIj9RnZgdg%252526_lgt_%25253D699e3289f92657a87584a7fde30290d8___122748___e2aafbeec7a4ff362b3085c69215f2b2___23e418033d927e424b4f6fd5d415899a628d070431fe1cf34a28ab7788f43494c6f8d27cad93ffc99b84bfa8fd4a3b6bbd2312ca8747a2df9ee9d810c5a781cf18d8464ae40a29479d670bca3e66d870192c2c4d7d103e8c5c20c42d2c115e4e2b1210656d87a63a2aad736075b354721ad5ad129ddf3b411e4ffc701e40a6c8c8901b2360241af3cdac02b7e260112b45349b8307fbb1752042eac283822622eeb351390b9451c1367c7fbcc717019690e99c8a5f648305c81e6f097b1d8f13053b2fc1b5ffe2e8b2f90c19889386af4f577549a96e3db10daaf43b1b7c335a94b4e792cdaba9378a726932116c6f703a166c0dd6f19485e8fa365359ab9e5af542296675a638ccc7fbb50bd759f55a7ede9a476c3516f4746939bf6779811d7471d7a2e2e9206e15ab8681758d1c7a%252526uuid%25253D699e3289f92657a87584a7fde30290d8&style=tao_custom&from=1688web"
+    },
+    {
+      "platform": "1688",
+      "pid": "alibaba",
+      "domain": "电商",
+      "keyword": "手机壳",
+      "condition": "native",
+      "textLen": 59,
+      "verifyWall": false,
+      "finalUrl": "https://login.taobao.com/?redirect_url=https%3A%2F%2Flogin.1688.com%2Fmember%2Fjump.htm%3Ftarget%3Dhttps%253A%252F%252Flogin.1688.com%252Fmember%252FmarketSigninJump.htm%253FDone%253Dhttps%25253A%25252F%25252Fs.1688.com%25253A443%25252Fselloffer%25252Foffer_search.htm%25252F_____tmd_____%25252Fpage%25252Flogin_jump%25253Frand%25253DS3WxGHAgAt756EpznwfNzJq2AFA2qBNla3j6EINUS8We9dazM_iKElp8DwVSHZUevpC41Bx7RzivXIj9RnZgdg%252526_lgt_%25253Da51e736560535532cd4440e7576fe5ad___122748___cb767989eb519cf559a0461a40a8fde0___23e418033d927e424b4f6fd5d415899a628d070431fe1cf34a28ab7788f43494c6f8d27cad93ffc99b84bfa8fd4a3b6bbd2312ca8747a2df9ee9d810c5a781cf18d8464ae40a29479d670bca3e66d870192c2c4d7d103e8c5c20c42d2c115e4e2b1210656d87a63a2aad736075b354721ad5ad129ddf3b411e4ffc701e40a6c8c8901b2360241af3cdac02b7e260112b45349b8307fbb1752042eac283822622eeb351390b9451c1367c7fbcc717019690e99c8a5f648305c81e6f097b1d8f13053b2fc1b5ffe2e8b2f90c19889386af4f577549a96e3db10daaf43b1b7c335a94b4e792cdaba9378a726932116c6f703a166c0dd6f19485e8fa365359ab9e5af542296675a638ccc7fbb50bd759f55a7ede9a476c3516f4746939bf6779811d7471d7a2e2e9206e15ab8681758d1c7a%252526uuid%25253Da51e736560535532cd4440e7576fe5ad&style=tao_custom&from=1688web"
+    },
+    {
+      "platform": "1688",
+      "pid": "alibaba",
+      "domain": "电商",
+      "keyword": "手机壳",
+      "condition": "headless",
+      "textLen": 59,
+      "verifyWall": false,
+      "finalUrl": "https://login.taobao.com/?redirect_url=https%3A%2F%2Flogin.1688.com%2Fmember%2Fjump.htm%3Ftarget%3Dhttps%253A%252F%252Flogin.1688.com%252Fmember%252FmarketSigninJump.htm%253FDone%253Dhttps%25253A%25252F%25252Fs.1688.com%25253A443%25252Fselloffer%25252Foffer_search.htm%25252F_____tmd_____%25252Fpage%25252Flogin_jump%25253Frand%25253DS3WxGHAgAt756EpznwfNzJq2AFA2qBNla3j6EINUS8We9dazM_iKElp8DwVSHZUevpC41Bx7RzivXIj9RnZgdg%252526_lgt_%25253D1662feeaa4b1b7c2e666b71ae4f4b02f___122748___368810a63afcd06cf7794e834f04df52___23e418033d927e424b4f6fd5d415899a628d070431fe1cf34a28ab7788f43494c6f8d27cad93ffc99b84bfa8fd4a3b6bbd2312ca8747a2df9ee9d810c5a781cf18d8464ae40a29479d670bca3e66d870192c2c4d7d103e8c5c20c42d2c115e4e2b1210656d87a63a2aad736075b354721ad5ad129ddf3b411e4ffc701e40a6c8c8901b2360241af3cdac02b7e260112b45349b8307fbb1752042eac283822622eeb351390b9451c1367c7fbcc717019690e99c8a5f648305c81e6f097b1d8f13053b2fc1b5ffe2e8b2f90c19889386af4f577549a96e3db10daaf43b1b7c335a94b4e792cdaba9378a726932116c6f703a166c0dd6f19485e8fa365359ab9e5af542296675a638ccc7fbb50bd759f55a7ede9a476c3516f4746939bf6779811d7471d7a2e2e9206e15ab8681758d1c7a%252526uuid%25253D1662feeaa4b1b7c2e666b71ae4f4b02f&style=tao_custom&from=1688web"
+    },
+    {
+      "platform": "1688",
+      "pid": "alibaba",
+      "domain": "电商",
+      "keyword": "数据线",
+      "condition": "native",
+      "textLen": 59,
+      "verifyWall": false,
+      "finalUrl": "https://login.taobao.com/?redirect_url=https%3A%2F%2Flogin.1688.com%2Fmember%2Fjump.htm%3Ftarget%3Dhttps%253A%252F%252Flogin.1688.com%252Fmember%252FmarketSigninJump.htm%253FDone%253Dhttps%25253A%25252F%25252Fs.1688.com%25253A443%25252Fselloffer%25252Foffer_search.htm%25252F_____tmd_____%25252Fpage%25252Flogin_jump%25253Frand%25253DS3WxGHAgAt756EpznwfNzJq2AFA2qBNla3j6EINUS8We9dazM_iKElp8DwVSHZUevpC41Bx7RzivXIj9RnZgdg%252526_lgt_%25253D4cdb9adda60bd378c7f6db349401d420___122748___c8491f7968000bb0311ca53f8b84aafd___23e418033d927e424b4f6fd5d415899a628d070431fe1cf34a28ab7788f43494c6f8d27cad93ffc99b84bfa8fd4a3b6bbd2312ca8747a2df9ee9d810c5a781cf18d8464ae40a29479d670bca3e66d870192c2c4d7d103e8c5c20c42d2c115e4e2b1210656d87a63a2aad736075b354721ad5ad129ddf3b411e4ffc701e40a6c8c8901b2360241af3cdac02b7e260112b45349b8307fbb1752042eac283822622eeb351390b9451c1367c7fbcc717019690e99c8a5f648305c81e6f097b1d8f13053b2fc1b5ffe2e8b2f90c19889386af4f577549a96e3db10daaf43b1b7c335a94b4e792cdaba9378a726932116c6f703a166c0dd6f19485e8fa365359ab9e5af542296675a638ccc7fbb50bd759f55a7ede9a476c3516f4746939bf6779811d7471d7a2e2e9206e15ab8681758d1c7a%252526uuid%25253D4cdb9adda60bd378c7f6db349401d420&style=tao_custom&from=1688web"
+    },
+    {
+      "platform": "1688",
+      "pid": "alibaba",
+      "domain": "电商",
+      "keyword": "数据线",
+      "condition": "headless",
+      "textLen": 59,
+      "verifyWall": false,
+      "finalUrl": "https://login.taobao.com/?redirect_url=https%3A%2F%2Flogin.1688.com%2Fmember%2Fjump.htm%3Ftarget%3Dhttps%253A%252F%252Flogin.1688.com%252Fmember%252FmarketSigninJump.htm%253FDone%253Dhttps%25253A%25252F%25252Fs.1688.com%25253A443%25252Fselloffer%25252Foffer_search.htm%25252F_____tmd_____%25252Fpage%25252Flogin_jump%25253Frand%25253DS3WxGHAgAt756EpznwfNzJq2AFA2qBNla3j6EINUS8We9dazM_iKElp8DwVSHZUevpC41Bx7RzivXIj9RnZgdg%252526_lgt_%25253D02f54a6cee3b27ebc017a063089eb41c___122748___5043bc2d35511c1309e3587a172cce69___23e418033d927e424b4f6fd5d415899a628d070431fe1cf34a28ab7788f43494c6f8d27cad93ffc99b84bfa8fd4a3b6bbd2312ca8747a2df9ee9d810c5a781cf18d8464ae40a29479d670bca3e66d870192c2c4d7d103e8c5c20c42d2c115e4e2b1210656d87a63a2aad736075b354721ad5ad129ddf3b411e4ffc701e40a6c8c8901b2360241af3cdac02b7e260112b45349b8307fbb1752042eac283822622eeb351390b9451c1367c7fbcc717019690e99c8a5f648305c81e6f097b1d8f13053b2fc1b5ffe2e8b2f90c19889386af4f577549a96e3db10daaf43b1b7c335a94b4e792cdaba9378a726932116c6f703a166c0dd6f19485e8fa365359ab9e5af542296675a638ccc7fbb50bd759f55a7ede9a476c3516f4746939bf6779811d7471d7a2e2e9206e15ab8681758d1c7a%252526uuid%25253D02f54a6cee3b27ebc017a063089eb41c&style=tao_custom&from=1688web"
+    },
+    {
+      "platform": "抖音",
+      "pid": "douyin",
+      "domain": "内容",
+      "keyword": "钢化膜",
+      "condition": "native",
+      "textLen": 623,
+      "verifyWall": false,
+      "finalUrl": "https://www.douyin.com/search/%E9%92%A2%E5%8C%96%E8%86%9C"
+    },
+    {
+      "platform": "抖音",
+      "pid": "douyin",
+      "domain": "内容",
+      "keyword": "钢化膜",
+      "condition": "headless",
+      "textLen": 4,
+      "verifyWall": false,
+      "finalUrl": "https://www.douyin.com/search/%E9%92%A2%E5%8C%96%E8%86%9C"
+    },
+    {
+      "platform": "抖音",
+      "pid": "douyin",
+      "domain": "内容",
+      "keyword": "手机壳",
+      "condition": "native",
+      "textLen": 639,
+      "verifyWall": false,
+      "finalUrl": "https://www.douyin.com/search/%E6%89%8B%E6%9C%BA%E5%A3%B3"
+    },
+    {
+      "platform": "抖音",
+      "pid": "douyin",
+      "domain": "内容",
+      "keyword": "手机壳",
+      "condition": "headless",
+      "textLen": 4,
+      "verifyWall": false,
+      "finalUrl": "https://www.douyin.com/search/%E6%89%8B%E6%9C%BA%E5%A3%B3"
+    },
+    {
+      "platform": "抖音",
+      "pid": "douyin",
+      "domain": "内容",
+      "keyword": "数据线",
+      "condition": "native",
+      "textLen": 638,
+      "verifyWall": false,
+      "finalUrl": "https://www.douyin.com/search/%E6%95%B0%E6%8D%AE%E7%BA%BF"
+    },
+    {
+      "platform": "抖音",
+      "pid": "douyin",
+      "domain": "内容",
+      "keyword": "数据线",
+      "condition": "headless",
+      "textLen": 4,
+      "verifyWall": false,
+      "finalUrl": "https://www.douyin.com/search/%E6%95%B0%E6%8D%AE%E7%BA%BF"
+    },
+    {
+      "platform": "B站",
+      "pid": "bilibili",
+      "domain": "内容",
+      "keyword": "钢化膜",
+      "condition": "native",
+      "textLen": 2911,
+      "verifyWall": false,
+      "finalUrl": "https://search.bilibili.com/all?keyword=%E9%92%A2%E5%8C%96%E8%86%9C"
+    },
+    {
+      "platform": "B站",
+      "pid": "bilibili",
+      "domain": "内容",
+      "keyword": "钢化膜",
+      "condition": "headless",
+      "textLen": 2911,
+      "verifyWall": false,
+      "finalUrl": "https://search.bilibili.com/all?keyword=%E9%92%A2%E5%8C%96%E8%86%9C"
+    },
+    {
+      "platform": "B站",
+      "pid": "bilibili",
+      "domain": "内容",
+      "keyword": "手机壳",
+      "condition": "native",
+      "textLen": 2912,
+      "verifyWall": false,
+      "finalUrl": "https://search.bilibili.com/all?keyword=%E6%89%8B%E6%9C%BA%E5%A3%B3"
+    },
+    {
+      "platform": "B站",
+      "pid": "bilibili",
+      "domain": "内容",
+      "keyword": "手机壳",
+      "condition": "headless",
+      "textLen": 2912,
+      "verifyWall": false,
+      "finalUrl": "https://search.bilibili.com/all?keyword=%E6%89%8B%E6%9C%BA%E5%A3%B3"
+    },
+    {
+      "platform": "B站",
+      "pid": "bilibili",
+      "domain": "内容",
+      "keyword": "数据线",
+      "condition": "native",
+      "textLen": 2832,
+      "verifyWall": false,
+      "finalUrl": "https://search.bilibili.com/all?keyword=%E6%95%B0%E6%8D%AE%E7%BA%BF"
+    },
+    {
+      "platform": "B站",
+      "pid": "bilibili",
+      "domain": "内容",
+      "keyword": "数据线",
+      "condition": "headless",
+      "textLen": 2780,
+      "verifyWall": false,
+      "finalUrl": "https://search.bilibili.com/all?keyword=%E6%95%B0%E6%8D%AE%E7%BA%BF"
+    },
+    {
+      "platform": "知乎",
+      "pid": "zhihu",
+      "domain": "内容",
+      "keyword": "钢化膜",
+      "condition": "native",
+      "textLen": 804,
+      "verifyWall": false,
+      "finalUrl": "https://www.zhihu.com/search?type=content&q=%E9%92%A2%E5%8C%96%E8%86%9C"
+    },
+    {
+      "platform": "知乎",
+      "pid": "zhihu",
+      "domain": "内容",
+      "keyword": "钢化膜",
+      "condition": "headless",
+      "textLen": 118,
+      "verifyWall": false,
+      "finalUrl": "https://www.zhihu.com/search?type=content&q=%E9%92%A2%E5%8C%96%E8%86%9C"
+    },
+    {
+      "platform": "知乎",
+      "pid": "zhihu",
+      "domain": "内容",
+      "keyword": "手机壳",
+      "condition": "native",
+      "textLen": 804,
+      "verifyWall": false,
+      "finalUrl": "https://www.zhihu.com/search?type=content&q=%E6%89%8B%E6%9C%BA%E5%A3%B3"
+    },
+    {
+      "platform": "知乎",
+      "pid": "zhihu",
+      "domain": "内容",
+      "keyword": "手机壳",
+      "condition": "headless",
+      "textLen": 118,
+      "verifyWall": false,
+      "finalUrl": "https://www.zhihu.com/search?type=content&q=%E6%89%8B%E6%9C%BA%E5%A3%B3"
+    },
+    {
+      "platform": "知乎",
+      "pid": "zhihu",
+      "domain": "内容",
+      "keyword": "数据线",
+      "condition": "native",
+      "textLen": 804,
+      "verifyWall": false,
+      "finalUrl": "https://www.zhihu.com/search?type=content&q=%E6%95%B0%E6%8D%AE%E7%BA%BF"
+    },
+    {
+      "platform": "知乎",
+      "pid": "zhihu",
+      "domain": "内容",
+      "keyword": "数据线",
+      "condition": "headless",
+      "textLen": 118,
+      "verifyWall": false,
+      "finalUrl": "https://www.zhihu.com/search?type=content&q=%E6%95%B0%E6%8D%AE%E7%BA%BF"
+    }
+  ],
+  "report": [
+    {
+      "pid": "douyin",
+      "name": "抖音",
+      "domain": "内容",
+      "pairs": [
+        {
+          "keyword": "钢化膜",
+          "native": 623,
+          "headless": 4,
+          "drop": 0.9936,
+          "valid": true,
+          "degraded": false
+        },
+        {
+          "keyword": "手机壳",
+          "native": 639,
+          "headless": 4,
+          "drop": 0.9937,
+          "valid": true,
+          "degraded": false
+        },
+        {
+          "keyword": "数据线",
+          "native": 638,
+          "headless": 4,
+          "drop": 0.9937,
+          "valid": true,
+          "degraded": false
+        }
+      ],
+      "validPairs": 3,
+      "meanDrop": 0.9937,
+      "verdict": "STRONG(强检测)"
+    },
+    {
+      "pid": "zhihu",
+      "name": "知乎",
+      "domain": "内容",
+      "pairs": [
+        {
+          "keyword": "钢化膜",
+          "native": 804,
+          "headless": 118,
+          "drop": 0.8532,
+          "valid": true,
+          "degraded": false
+        },
+        {
+          "keyword": "手机壳",
+          "native": 804,
+          "headless": 118,
+          "drop": 0.8532,
+          "valid": true,
+          "degraded": false
+        },
+        {
+          "keyword": "数据线",
+          "native": 804,
+          "headless": 118,
+          "drop": 0.8532,
+          "valid": true,
+          "degraded": false
+        }
+      ],
+      "validPairs": 3,
+      "meanDrop": 0.8532,
+      "verdict": "STRONG(强检测)"
+    },
+    {
+      "pid": "bilibili",
+      "name": "B站",
+      "domain": "内容",
+      "pairs": [
+        {
+          "keyword": "钢化膜",
+          "native": 2911,
+          "headless": 2911,
+          "drop": 0,
+          "valid": true,
+          "degraded": false
+        },
+        {
+          "keyword": "手机壳",
+          "native": 2912,
+          "headless": 2912,
+          "drop": 0,
+          "valid": true,
+          "degraded": false
+        },
+        {
+          "keyword": "数据线",
+          "native": 2832,
+          "headless": 2780,
+          "drop": 0.0184,
+          "valid": true,
+          "degraded": false
+        }
+      ],
+      "validPairs": 3,
+      "meanDrop": 0.0061,
+      "verdict": "NONE(无差异)"
+    },
+    {
+      "pid": "vip",
+      "name": "唯品会",
+      "domain": "电商",
+      "pairs": [
+        {
+          "keyword": "钢化膜",
+          "native": 842,
+          "headless": 842,
+          "drop": 0,
+          "valid": true,
+          "degraded": false
+        },
+        {
+          "keyword": "手机壳",
+          "native": 842,
+          "headless": 842,
+          "drop": 0,
+          "valid": true,
+          "degraded": false
+        },
+        {
+          "keyword": "数据线",
+          "native": 842,
+          "headless": 842,
+          "drop": 0,
+          "valid": true,
+          "degraded": false
+        }
+      ],
+      "validPairs": 3,
+      "meanDrop": 0,
+      "verdict": "NONE(无差异)"
+    },
+    {
+      "pid": "suning",
+      "name": "苏宁易购",
+      "domain": "电商",
+      "pairs": [
+        {
+          "keyword": "钢化膜",
+          "native": 2751,
+          "headless": 3185,
+          "drop": -0.1578,
+          "valid": true,
+          "degraded": false
+        },
+        {
+          "keyword": "手机壳",
+          "native": 2440,
+          "headless": 2440,
+          "drop": 0,
+          "valid": true,
+          "degraded": false
+        },
+        {
+          "keyword": "数据线",
+          "native": 3318,
+          "headless": 3318,
+          "drop": 0,
+          "valid": true,
+          "degraded": false
+        }
+      ],
+      "validPairs": 3,
+      "meanDrop": -0.0526,
+      "verdict": "NONE(无差异)"
+    },
+    {
+      "pid": "jd",
+      "name": "京东",
+      "domain": "电商",
+      "pairs": [
+        {
+          "keyword": "钢化膜",
+          "native": 195,
+          "headless": 195,
+          "drop": 0,
+          "valid": false,
+          "degraded": true
+        },
+        {
+          "keyword": "手机壳",
+          "native": 195,
+          "headless": 195,
+          "drop": 0,
+          "valid": false,
+          "degraded": true
+        },
+        {
+          "keyword": "数据线",
+          "native": 195,
+          "headless": 195,
+          "drop": 0,
+          "valid": false,
+          "degraded": true
+        }
+      ],
+      "validPairs": 0,
+      "meanDrop": null,
+      "verdict": "INSUFFICIENT(无有效对照)"
+    },
+    {
+      "pid": "taobao",
+      "name": "淘宝",
+      "domain": "电商",
+      "pairs": [
+        {
+          "keyword": "钢化膜",
+          "native": 160,
+          "headless": 160,
+          "drop": 0,
+          "valid": false,
+          "degraded": true
+        },
+        {
+          "keyword": "手机壳",
+          "native": 160,
+          "headless": 160,
+          "drop": 0,
+          "valid": false,
+          "degraded": true
+        },
+        {
+          "keyword": "数据线",
+          "native": 160,
+          "headless": 160,
+          "drop": 0,
+          "valid": false,
+          "degraded": true
+        }
+      ],
+      "validPairs": 0,
+      "meanDrop": null,
+      "verdict": "INSUFFICIENT(无有效对照)"
+    },
+    {
+      "pid": "alibaba",
+      "name": "1688",
+      "domain": "电商",
+      "pairs": [
+        {
+          "keyword": "钢化膜",
+          "native": 59,
+          "headless": 59,
+          "drop": 0,
+          "valid": false,
+          "degraded": true
+        },
+        {
+          "keyword": "手机壳",
+          "native": 59,
+          "headless": 59,
+          "drop": 0,
+          "valid": false,
+          "degraded": true
+        },
+        {
+          "keyword": "数据线",
+          "native": 59,
+          "headless": 59,
+          "drop": 0,
+          "valid": false,
+          "degraded": true
+        }
+      ],
+      "validPairs": 0,
+      "meanDrop": null,
+      "verdict": "INSUFFICIENT(无有效对照)"
+    }
+  ],
+  "byDomain": [
+    {
+      "domain": "电商",
+      "validPlatforms": 2,
+      "strong": 0,
+      "meanDrop": -0.0263
+    },
+    {
+      "domain": "内容",
+      "validPlatforms": 3,
+      "strong": 2,
+      "meanDrop": 0.6177
+    }
+  ]
+}
