@@ -1,0 +1,36 @@
+# ---- 凭证与登录数据：绝不提交 ----
+*.cookie
+cookies*.json
+auth*.json
+*.token
+*.session
+.env
+.env.*
+
+# ---- 抓取产物与数据导出 ----
+*.txt
+*.json
+!package.json
+!package-lock.json
+
+# ---- 临时文件 ----
+tmp-*
+*.tmp
+*.bak
+
+# ---- 输出 ----
+out/
+dist/
+*.log
+
+# ---- Python ----
+__pycache__/
+*.pyc
+.venv/
+venv/
+
+# ---- 编辑器 / 系统 ----
+.vscode/
+.idea/
+.DS_Store
+Thumbs.db
