@@ -79,6 +79,13 @@ Allouah 等人[^15] 的 ACES 框架从经济学视角审计智能体决策，发
 
 **与本文的区别**：上述工作普遍运行在**模拟环境或自托管沙箱**中，关注智能体的**决策质量**。本文关注**执行层** —— 在必须登录、有风控、发往特定地区、前端频繁变化的真实平台上，交互本身能否完成。两者互补：即使决策完美，执行层失败也会使整个系统失效。
 
+### 2.2c 最新基准与开源生态（2024–2026）
+
+电商智能体评测在 2024–2026 年快速扩张：Shopping MMLU[^36]（NeurIPS 2024）构建了大规模多任务购物基准；ShoppingBench[^37]（AAAI 2026）转向真实意图锚定；AgentRecBench[^38]（NeurIPS 2025 Datasets & Benchmarks）面向 agent 驱动的个性化推荐；EcomMMMU[^39] 关注多模态电商中的视觉利用。
+
+**与本文最相关的是本地生活服务方向**：LocalGPT[^40]（KDD 2025）与 LocalSearchBench[^41]（KDD 2026）专门针对美团等平台的本地生活检索建模 —— 这与我们在 §9.1 中观察到"美团 PC 端到店业务无入口"的结论形成互补：**学术界已在为本地生活构建基准，而真实 Web 端的可达性仍是未被系统记录的工程约束**。
+
+此外，社区维护的综述索引[^42]系统汇总了 agentic commerce 的工作，可作为该方向持续跟踪的入口。大规模人类行为数据方面，Amazon Reviews 2023[^43] 提供 5.715 亿条评论、5451 万用户、4819 万商品；淘宝用户行为数据集[^44] 提供 1 亿条含加购与购买的交互记录 —— 两者均可作为人类基线的公开数据来源（本文在 §9.5b 中使用了 Product Comparison[^35]）。
 ### 2.2b 消费者行为中的人口统计因素
 
 由于本文的人类基线涉及被试选择，我们核查了性别对在线购物行为的影响这一常被假设的混杂因素。Kanwal 等人[^31]对在线消费者行为的性别差异与相似性做了系统性综述，结论是**现有研究结果并不一致**；SAGE Open 的一项大样本研究[^32]采用广义有序 logit 模型发现性别**仅在部分维度**（购买频次、商品类别）上有影响；而 CACM 的早期经典研究[^33]则报告男性对网络购物持更正面评价。
@@ -832,6 +839,40 @@ E5 揭示的假阴性机制（§9.1 发现 4）意味着：**原始观测数不�
 **可检假设 H4**：在 T1 类任务上，智能体**墙钟耗时高于人类**（每次导航含渲染等待），但其**探测代价（PC）与人类点击数量级相当** —— 瓶颈在时间而非信息获取。
 
 **局限**：单被试无法控制年龄、熟练度、设备熟悉度等混杂因素，仅作**数量级参照**而非严格对照。
+### 9.5b 人类比价行为的公开数据证据
+
+自行招募被试成本高且样本小。我们转而利用公开的人类比价数据集 **Product Comparison**（WSDM 2023[^35]，14,718 条人工标注记录，涵盖约 8K 商品）来分析**人类比价时实际关注哪些维度**，以此校准 §8.4 的决策模型与 §4.5 的判据层级。
+
+**分析结果**：
+
+| 维度 | 结果 |
+|---|---|
+| 属性-值对总数 | 19,945 |
+| 唯一属性名 | 382 |
+| 属性值类型 | **数值型 58.5%** / 文本型 34.9% / 布尔型 6.6% |
+
+**属性关键词频率（Top 6）**：
+
+| 关键词 | 出现次数 | 对应模型变量 |
+|---|---|---|
+| **rating** | **5,598（占 28.1%）** | 质量 $q$ |
+| type | 2,931 | — |
+| number | 675 | 数量 $n$ |
+| **quality** | 531 | 质量 $q$ |
+| **capacity** | 447 | 数量/规格 |
+| **price** | 90（属性计数第 21 位） | 价格 $p$ |
+
+**最常见的单个属性**：`unit count`（**第 1 位**）、`item weight`、`durability rating`、`memory storage capacity`、`brand`、`price`、`material`、`resolution`。
+
+**人类比价句中的比较词**：`more` 468、`best` 412、`lower` 137、`higher` 130、`prefer` 116。
+
+**三条结论**：
+
+1. **§8.4 模型的三维在真实数据中得到验证** —— `unit count`（数量）位列第一、`rating`/`quality`（质量）占绝对主导、`price`（价格）是核心属性。数量、质量、价格确为人类比价的主要维度。
+2. **质量 $q$ 应操作化为可观测评分** —— 人类用 `rating` 表达质量（占 28%），而非抽象概念。据此我们将 §8.4 的 $q$ 细化为可观测的评分向量（星级、好评率、评价量），这也正是我们在案例中实际使用的判据（96%/98% 好评率、10 万+ 评价量）。
+3. **数值型占 58.5%** —— 人类比价主要比较**可量化属性**，与本文"判据必须来自权威且可验证来源"（§4.5）的方法论**独立吻合**。
+
+**局限**：该数据集来自 Amazon 英文场景，与中文电商的属性命名体系存在差异；其记录的是**比价结果**而非**比价耗时**，故不能直接替代 H4 所需的耗时基线。
 ### 9.6 对照条件
 
 为量化 §6.3.1 的结论，应在同一任务集上比较：
@@ -1019,6 +1060,16 @@ E5 揭示的假阴性机制（§9.1 发现 4）意味着：**原始观测数不�
 [^32]: An Investigation of Gender Differences in E-Commerce Shopping. SAGE Open, 2024. https://journals.sagepub.com/doi/10.1177/21582440241287630
 [^33]: Gender Differences in Perceptions of Web-Based Shopping. Communications of the ACM, 2002. https://cacm.acm.org/research/gender-differences-in-perceptions-of-web-based-shopping/
 [^34]: Ashok, P. Gender and Behaviour Differences Influencing on Web Shopping. 2021. https://doi.org/10.34293/management.v8i4.3809
+[^35]: Vedula, N., Collins, M., Agichtein, E., Rokhlenko, O. Generating Explainable Product Comparisons for Online Shopping. WSDM 2023. Dataset: https://registry.opendata.aws/prod-comp-shopping/
+[^36]: Jin, Y., Li, Z., Zhang, C., et al. Shopping MMLU: A Massive Multi-Task Online Shopping Benchmark for Large Language Models. NeurIPS 2024 (Datasets and Benchmarks Track). arXiv:2410.20745. https://arxiv.org/abs/2410.20745
+[^37]: Wang, J., Xiao, K., Sun, Q., et al. ShoppingBench: A Real-World Intent-Grounded Shopping Benchmark for LLM-based Agents. AAAI 2026. arXiv:2508.04266. https://arxiv.org/abs/2508.04266
+[^38]: AgentRecBench: Benchmarking LLM Agent-based Personalized Recommender Systems. NeurIPS 2025 Datasets & Benchmarks Track. https://proceedings.neurips.cc/paper_files/paper/2025/file/e2d6f7249add096e26679eade1b4cc6f-Paper-Datasets_and_Benchmarks_Track.pdf
+[^39]: EcomMMMU: Strategic Utilization of Visuals for Robust Multimodal E-commerce. arXiv:2508.15721. https://arxiv.org/abs/2508.15721
+[^40]: LocalGPT: Benchmarking and Advancing Large Language Models for Local Life Services in Meituan. KDD 2025. https://doi.org/10.1145/3711896.3737196
+[^41]: LocalSearchBench: Benchmarking Agentic Search in Real-World Local Life Services. KDD 2026. https://doi.org/10.1145/3770855.3817466
+[^42]: awesome-agentic-commerce: A curated list of agentic commerce research. GitHub. https://github.com/yifeizhangcs/awesome-agentic-commerce
+[^43]: Hou, Y., Li, J., He, Z., et al. Bridging Language and Items for Retrieval and Recommendation (Amazon Reviews 2023). https://amazon-reviews-2023.github.io/
+[^44]: Alibaba. User Behavior Data from Taobao for Recommendation. Tianchi. https://tianchi.aliyun.com/dataset/649
 
 ---
 
