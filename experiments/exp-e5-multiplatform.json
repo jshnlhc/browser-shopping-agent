@@ -1,0 +1,530 @@
+{
+  "experiment": "E5: 跨平台 UA 对照（泛化验证，未登录临时 profile）",
+  "port": 9336,
+  "repeats": 2,
+  "totalObservations": 40,
+  "rows": [
+    {
+      "platform": "京东",
+      "pid": "jd",
+      "domain": "电商",
+      "condition": "native",
+      "textLen": 195,
+      "verifyWall": false,
+      "finalUrl": "https://passport.jd.com/new/login.aspx?ReturnUrl=https%3A%2F%2Fsearch.jd.com%2FSearch%3Fkeyword%3D%25E9%2592%25A2%25E5%258C%2596%25E8%2586%259C&czLogin=1",
+      "repeat": 1
+    },
+    {
+      "platform": "京东",
+      "pid": "jd",
+      "domain": "电商",
+      "condition": "headless",
+      "textLen": 195,
+      "verifyWall": false,
+      "finalUrl": "https://passport.jd.com/new/login.aspx?ReturnUrl=https%3A%2F%2Fsearch.jd.com%2FSearch%3Fkeyword%3D%25E9%2592%25A2%25E5%258C%2596%25E8%2586%259C&czLogin=1",
+      "repeat": 1
+    },
+    {
+      "platform": "京东",
+      "pid": "jd",
+      "domain": "电商",
+      "condition": "native",
+      "textLen": 195,
+      "verifyWall": false,
+      "finalUrl": "https://passport.jd.com/new/login.aspx?ReturnUrl=https%3A%2F%2Fsearch.jd.com%2FSearch%3Fkeyword%3D%25E9%2592%25A2%25E5%258C%2596%25E8%2586%259C&czLogin=1",
+      "repeat": 2
+    },
+    {
+      "platform": "京东",
+      "pid": "jd",
+      "domain": "电商",
+      "condition": "headless",
+      "textLen": 195,
+      "verifyWall": false,
+      "finalUrl": "https://passport.jd.com/new/login.aspx?ReturnUrl=https%3A%2F%2Fsearch.jd.com%2FSearch%3Fkeyword%3D%25E9%2592%25A2%25E5%258C%2596%25E8%2586%259C&czLogin=1",
+      "repeat": 2
+    },
+    {
+      "platform": "淘宝",
+      "pid": "taobao",
+      "domain": "电商",
+      "condition": "native",
+      "textLen": 809,
+      "verifyWall": false,
+      "finalUrl": "https://s.taobao.com/search?q=%E9%92%A2%E5%8C%96%E8%86%9C",
+      "repeat": 1
+    },
+    {
+      "platform": "淘宝",
+      "pid": "taobao",
+      "domain": "电商",
+      "condition": "headless",
+      "textLen": 809,
+      "verifyWall": false,
+      "finalUrl": "https://s.taobao.com/search?q=%E9%92%A2%E5%8C%96%E8%86%9C",
+      "repeat": 1
+    },
+    {
+      "platform": "淘宝",
+      "pid": "taobao",
+      "domain": "电商",
+      "condition": "native",
+      "textLen": 809,
+      "verifyWall": false,
+      "finalUrl": "https://s.taobao.com/search?q=%E9%92%A2%E5%8C%96%E8%86%9C",
+      "repeat": 2
+    },
+    {
+      "platform": "淘宝",
+      "pid": "taobao",
+      "domain": "电商",
+      "condition": "headless",
+      "textLen": 809,
+      "verifyWall": false,
+      "finalUrl": "https://s.taobao.com/search?q=%E9%92%A2%E5%8C%96%E8%86%9C",
+      "repeat": 2
+    },
+    {
+      "platform": "拼多多",
+      "pid": "pdd",
+      "domain": "电商",
+      "condition": "native",
+      "textLen": 54,
+      "verifyWall": true,
+      "finalUrl": "https://mobile.yangkeduo.com/login.html?from=https%3A%2F%2Fmobile.yangkeduo.com%2Fsearch_result.html%3Fsearch_key%3D%25E9%2592%25A2%25E5%258C%2596%25E8%2586%259C&refer_page_name=search_result&refer_page_id=10015_1790343092489_68s58eqtsq&refer_page_sn=10015",
+      "repeat": 1
+    },
+    {
+      "platform": "拼多多",
+      "pid": "pdd",
+      "domain": "电商",
+      "condition": "headless",
+      "textLen": 54,
+      "verifyWall": true,
+      "finalUrl": "https://mobile.yangkeduo.com/login.html?from=https%3A%2F%2Fmobile.yangkeduo.com%2Fsearch_result.html%3Fsearch_key%3D%25E9%2592%25A2%25E5%258C%2596%25E8%2586%259C&refer_page_name=search_result&refer_page_id=10015_1790343117825_je1jv5pm5j&refer_page_sn=10015",
+      "repeat": 1
+    },
+    {
+      "platform": "拼多多",
+      "pid": "pdd",
+      "domain": "电商",
+      "condition": "native",
+      "textLen": 54,
+      "verifyWall": true,
+      "finalUrl": "https://mobile.yangkeduo.com/login.html?from=https%3A%2F%2Fmobile.yangkeduo.com%2Fsearch_result.html%3Fsearch_key%3D%25E9%2592%25A2%25E5%258C%2596%25E8%2586%259C&refer_page_name=search_result&refer_page_id=10015_1790343143147_7mi22v97xw&refer_page_sn=10015",
+      "repeat": 2
+    },
+    {
+      "platform": "拼多多",
+      "pid": "pdd",
+      "domain": "电商",
+      "condition": "headless",
+      "textLen": 54,
+      "verifyWall": true,
+      "finalUrl": "https://mobile.yangkeduo.com/login.html?from=https%3A%2F%2Fmobile.yangkeduo.com%2Fsearch_result.html%3Fsearch_key%3D%25E9%2592%25A2%25E5%258C%2596%25E8%2586%259C&refer_page_name=search_result&refer_page_id=10015_1790343168503_ynhmf6jo5p&refer_page_sn=10015",
+      "repeat": 2
+    },
+    {
+      "platform": "苏宁易购",
+      "pid": "suning",
+      "domain": "电商",
+      "condition": "native",
+      "textLen": 4049,
+      "verifyWall": false,
+      "finalUrl": "https://search.suning.com/%E9%92%A2%E5%8C%96%E8%86%9C/",
+      "repeat": 1
+    },
+    {
+      "platform": "苏宁易购",
+      "pid": "suning",
+      "domain": "电商",
+      "condition": "headless",
+      "textLen": 4049,
+      "verifyWall": false,
+      "finalUrl": "https://search.suning.com/%E9%92%A2%E5%8C%96%E8%86%9C/",
+      "repeat": 1
+    },
+    {
+      "platform": "苏宁易购",
+      "pid": "suning",
+      "domain": "电商",
+      "condition": "native",
+      "textLen": 4049,
+      "verifyWall": false,
+      "finalUrl": "https://search.suning.com/%E9%92%A2%E5%8C%96%E8%86%9C/",
+      "repeat": 2
+    },
+    {
+      "platform": "苏宁易购",
+      "pid": "suning",
+      "domain": "电商",
+      "condition": "headless",
+      "textLen": 4049,
+      "verifyWall": false,
+      "finalUrl": "https://search.suning.com/%E9%92%A2%E5%8C%96%E8%86%9C/",
+      "repeat": 2
+    },
+    {
+      "platform": "唯品会",
+      "pid": "vip",
+      "domain": "电商",
+      "condition": "native",
+      "textLen": 842,
+      "verifyWall": false,
+      "finalUrl": "https://passport.vip.com/login?src=https%3A%2F%2Fcategory.vip.com%2Fsuggest.php%3Fkeyword%3D%25E9%2592%25A2%25E5%258C%2596%25E8%2586%259C%26tfs_url%3D%252F%252Fmapi-pc.vip.com%252Fvips-mobile%252Frest%252Fshopping%252Fpc%252Fsearch%252Fproduct%252Frank",
+      "repeat": 1
+    },
+    {
+      "platform": "唯品会",
+      "pid": "vip",
+      "domain": "电商",
+      "condition": "headless",
+      "textLen": 842,
+      "verifyWall": false,
+      "finalUrl": "https://passport.vip.com/login?src=https%3A%2F%2Fcategory.vip.com%2Fsuggest.php%3Fkeyword%3D%25E9%2592%25A2%25E5%258C%2596%25E8%2586%259C%26tfs_url%3D%252F%252Fmapi-pc.vip.com%252Fvips-mobile%252Frest%252Fshopping%252Fpc%252Fsearch%252Fproduct%252Frank",
+      "repeat": 1
+    },
+    {
+      "platform": "唯品会",
+      "pid": "vip",
+      "domain": "电商",
+      "condition": "native",
+      "textLen": 842,
+      "verifyWall": false,
+      "finalUrl": "https://passport.vip.com/login?src=https%3A%2F%2Fcategory.vip.com%2Fsuggest.php%3Fkeyword%3D%25E9%2592%25A2%25E5%258C%2596%25E8%2586%259C%26tfs_url%3D%252F%252Fmapi-pc.vip.com%252Fvips-mobile%252Frest%252Fshopping%252Fpc%252Fsearch%252Fproduct%252Frank",
+      "repeat": 2
+    },
+    {
+      "platform": "唯品会",
+      "pid": "vip",
+      "domain": "电商",
+      "condition": "headless",
+      "textLen": 842,
+      "verifyWall": false,
+      "finalUrl": "https://passport.vip.com/login?src=https%3A%2F%2Fcategory.vip.com%2Fsuggest.php%3Fkeyword%3D%25E9%2592%25A2%25E5%258C%2596%25E8%2586%259C%26tfs_url%3D%252F%252Fmapi-pc.vip.com%252Fvips-mobile%252Frest%252Fshopping%252Fpc%252Fsearch%252Fproduct%252Frank",
+      "repeat": 2
+    },
+    {
+      "platform": "1688",
+      "pid": "alibaba",
+      "domain": "电商",
+      "condition": "native",
+      "textLen": 59,
+      "verifyWall": false,
+      "finalUrl": "https://login.taobao.com/?redirect_url=https%3A%2F%2Flogin.1688.com%2Fmember%2Fjump.htm%3Ftarget%3Dhttps%253A%252F%252Flogin.1688.com%252Fmember%252FmarketSigninJump.htm%253FDone%253Dhttps%25253A%25252F%25252Fs.1688.com%25253A443%25252Fselloffer%25252Foffer_search.htm%25252F_____tmd_____%25252Fpage%25252Flogin_jump%25253Frand%25253DS3WxGHAgAt756EpznwfNzJq2AFA2qBNla3j6EINUS8We9dazM_iKElp8DwVSHZUevpC41Bx7RzivXIj9RnZgdg%252526_lgt_%25253D668016f20832f41d4cb9046df42868ba___122748___3c06f8df271899c68d0f15414687fafc___23e418033d927e424b4f6fd5d415899a628d070431fe1cf34a28ab7788f43494c6f8d27cad93ffc99b84bfa8fd4a3b6bbd2312ca8747a2df9ee9d810c5a781cf18d8464ae40a29479d670bca3e66d870192c2c4d7d103e8c5c20c42d2c115e4e2b1210656d87a63a2aad736075b354721ad5ad129ddf3b411e4ffc701e40a6c8c8901b2360241af3cdac02b7e260112b45349b8307fbb1752042eac283822622eeb351390b9451c1367c7fbcc717019690e99c8a5f648305c81e6f097b1d8f13053b2fc1b5ffe2e8b2f90c19889386af4f577549a96e3db10daaf43b1b7c335a94b4e792cdaba9378a726932116c6f703a166c0dd6f19485e8fa365359ab9e5af542296675a638ccc7fbb50bd759f55a7ede9a476c3516f4746939bf6779811d7471d7a2e2e9206e15ab8681758d1c7a%252526uuid%25253D668016f20832f41d4cb9046df42868ba&style=tao_custom&from=1688web",
+      "repeat": 1
+    },
+    {
+      "platform": "1688",
+      "pid": "alibaba",
+      "domain": "电商",
+      "condition": "headless",
+      "textLen": 59,
+      "verifyWall": false,
+      "finalUrl": "https://login.taobao.com/?redirect_url=https%3A%2F%2Flogin.1688.com%2Fmember%2Fjump.htm%3Ftarget%3Dhttps%253A%252F%252Flogin.1688.com%252Fmember%252FmarketSigninJump.htm%253FDone%253Dhttps%25253A%25252F%25252Fs.1688.com%25253A443%25252Fselloffer%25252Foffer_search.htm%25252F_____tmd_____%25252Fpage%25252Flogin_jump%25253Frand%25253DS3WxGHAgAt756EpznwfNzJq2AFA2qBNla3j6EINUS8We9dazM_iKElp8DwVSHZUevpC41Bx7RzivXIj9RnZgdg%252526_lgt_%25253Dc874defca8be41f0386180bac5ef2627___122748___a66e9bddca3d8f2109d5446ca241f465___23e418033d927e424b4f6fd5d415899a628d070431fe1cf34a28ab7788f43494c6f8d27cad93ffc99b84bfa8fd4a3b6bbd2312ca8747a2df9ee9d810c5a781cf18d8464ae40a29479d670bca3e66d870192c2c4d7d103e8c5c20c42d2c115e4e2b1210656d87a63a2aad736075b354721ad5ad129ddf3b411e4ffc701e40a6c8c8901b2360241af3cdac02b7e260112b45349b8307fbb1752042eac283822622eeb351390b9451c1367c7fbcc717019690e99c8a5f648305c81e6f097b1d8f13053b2fc1b5ffe2e8b2f90c19889386af4f577549a96e3db10daaf43b1b7c335a94b4e792cdaba9378a726932116c6f703a166c0dd6f19485e8fa365359ab9e5af542296675a638ccc7fbb50bd759f55a7ede9a476c3516f4746939bf6779811d7471d7a2e2e9206e15ab8681758d1c7a%252526uuid%25253Dc874defca8be41f0386180bac5ef2627&style=tao_custom&from=1688web",
+      "repeat": 1
+    },
+    {
+      "platform": "1688",
+      "pid": "alibaba",
+      "domain": "电商",
+      "condition": "native",
+      "textLen": 59,
+      "verifyWall": false,
+      "finalUrl": "https://login.taobao.com/?redirect_url=https%3A%2F%2Flogin.1688.com%2Fmember%2Fjump.htm%3Ftarget%3Dhttps%253A%252F%252Flogin.1688.com%252Fmember%252FmarketSigninJump.htm%253FDone%253Dhttps%25253A%25252F%25252Fs.1688.com%25253A443%25252Fselloffer%25252Foffer_search.htm%25252F_____tmd_____%25252Fpage%25252Flogin_jump%25253Frand%25253DS3WxGHAgAt756EpznwfNzJq2AFA2qBNla3j6EINUS8We9dazM_iKElp8DwVSHZUevpC41Bx7RzivXIj9RnZgdg%252526_lgt_%25253D63c62416d56a6f7ca918d03e145289cd___122748___90f3157939f6bbce460864c4f5dde3de___23e418033d927e424b4f6fd5d415899a628d070431fe1cf34a28ab7788f43494c6f8d27cad93ffc99b84bfa8fd4a3b6bbd2312ca8747a2df9ee9d810c5a781cf18d8464ae40a29479d670bca3e66d870192c2c4d7d103e8c5c20c42d2c115e4e2b1210656d87a63a2aad736075b354721ad5ad129ddf3b411e4ffc701e40a6c8c8901b2360241af3cdac02b7e260112b45349b8307fbb1752042eac283822622eeb351390b9451c1367c7fbcc717019690e99c8a5f648305c81e6f097b1d8f13053b2fc1b5ffe2e8b2f90c19889386af4f577549a96e3db10daaf43b1b7c335a94b4e792cdaba9378a726932116c6f703a166c0dd6f19485e8fa365359ab9e5af542296675a638ccc7fbb50bd759f55a7ede9a476c3516f4746939bf6779811d7471d7a2e2e9206e15ab8681758d1c7a%252526uuid%25253D63c62416d56a6f7ca918d03e145289cd&style=tao_custom&from=1688web",
+      "repeat": 2
+    },
+    {
+      "platform": "1688",
+      "pid": "alibaba",
+      "domain": "电商",
+      "condition": "headless",
+      "textLen": 59,
+      "verifyWall": false,
+      "finalUrl": "https://login.taobao.com/?redirect_url=https%3A%2F%2Flogin.1688.com%2Fmember%2Fjump.htm%3Ftarget%3Dhttps%253A%252F%252Flogin.1688.com%252Fmember%252FmarketSigninJump.htm%253FDone%253Dhttps%25253A%25252F%25252Fs.1688.com%25253A443%25252Fselloffer%25252Foffer_search.htm%25252F_____tmd_____%25252Fpage%25252Flogin_jump%25253Frand%25253DS3WxGHAgAt756EpznwfNzJq2AFA2qBNla3j6EINUS8We9dazM_iKElp8DwVSHZUevpC41Bx7RzivXIj9RnZgdg%252526_lgt_%25253D368b7513c5cc390410f9acbccba8c936___122748___db8004be60caea0be6f7f1cdbed2bf43___23e418033d927e424b4f6fd5d415899a628d070431fe1cf34a28ab7788f43494c6f8d27cad93ffc99b84bfa8fd4a3b6bbd2312ca8747a2df9ee9d810c5a781cf18d8464ae40a29479d670bca3e66d870192c2c4d7d103e8c5c20c42d2c115e4e2b1210656d87a63a2aad736075b354721ad5ad129ddf3b411e4ffc701e40a6c8c8901b2360241af3cdac02b7e260112b45349b8307fbb1752042eac283822622eeb351390b9451c1367c7fbcc717019690e99c8a5f648305c81e6f097b1d8f13053b2fc1b5ffe2e8b2f90c19889386af4f577549a96e3db10daaf43b1b7c335a94b4e792cdaba9378a726932116c6f703a166c0dd6f19485e8fa365359ab9e5af542296675a638ccc7fbb50bd759f55a7ede9a476c3516f4746939bf6779811d7471d7a2e2e9206e15ab8681758d1c7a%252526uuid%25253D368b7513c5cc390410f9acbccba8c936&style=tao_custom&from=1688web",
+      "repeat": 2
+    },
+    {
+      "platform": "抖音",
+      "pid": "douyin",
+      "domain": "内容",
+      "condition": "native",
+      "textLen": 638,
+      "verifyWall": false,
+      "finalUrl": "https://www.douyin.com/search/%E9%92%A2%E5%8C%96%E8%86%9C",
+      "repeat": 1
+    },
+    {
+      "platform": "抖音",
+      "pid": "douyin",
+      "domain": "内容",
+      "condition": "headless",
+      "textLen": 4,
+      "verifyWall": false,
+      "finalUrl": "https://www.douyin.com/search/%E9%92%A2%E5%8C%96%E8%86%9C",
+      "repeat": 1
+    },
+    {
+      "platform": "抖音",
+      "pid": "douyin",
+      "domain": "内容",
+      "condition": "native",
+      "textLen": 638,
+      "verifyWall": false,
+      "finalUrl": "https://www.douyin.com/search/%E9%92%A2%E5%8C%96%E8%86%9C",
+      "repeat": 2
+    },
+    {
+      "platform": "抖音",
+      "pid": "douyin",
+      "domain": "内容",
+      "condition": "headless",
+      "textLen": 4,
+      "verifyWall": false,
+      "finalUrl": "https://www.douyin.com/search/%E9%92%A2%E5%8C%96%E8%86%9C",
+      "repeat": 2
+    },
+    {
+      "platform": "B站",
+      "pid": "bilibili",
+      "domain": "内容",
+      "condition": "native",
+      "textLen": 3261,
+      "verifyWall": false,
+      "finalUrl": "https://search.bilibili.com/all?keyword=%E9%92%A2%E5%8C%96%E8%86%9C",
+      "repeat": 1
+    },
+    {
+      "platform": "B站",
+      "pid": "bilibili",
+      "domain": "内容",
+      "condition": "headless",
+      "textLen": 2909,
+      "verifyWall": false,
+      "finalUrl": "https://search.bilibili.com/all?keyword=%E9%92%A2%E5%8C%96%E8%86%9C",
+      "repeat": 1
+    },
+    {
+      "platform": "B站",
+      "pid": "bilibili",
+      "domain": "内容",
+      "condition": "native",
+      "textLen": 2876,
+      "verifyWall": false,
+      "finalUrl": "https://search.bilibili.com/all?keyword=%E9%92%A2%E5%8C%96%E8%86%9C",
+      "repeat": 2
+    },
+    {
+      "platform": "B站",
+      "pid": "bilibili",
+      "domain": "内容",
+      "condition": "headless",
+      "textLen": 2943,
+      "verifyWall": false,
+      "finalUrl": "https://search.bilibili.com/all?keyword=%E9%92%A2%E5%8C%96%E8%86%9C",
+      "repeat": 2
+    },
+    {
+      "platform": "知乎",
+      "pid": "zhihu",
+      "domain": "内容",
+      "condition": "native",
+      "textLen": 810,
+      "verifyWall": false,
+      "finalUrl": "https://www.zhihu.com/search?type=content&q=%E9%92%A2%E5%8C%96%E8%86%9C",
+      "repeat": 1
+    },
+    {
+      "platform": "知乎",
+      "pid": "zhihu",
+      "domain": "内容",
+      "condition": "headless",
+      "textLen": 118,
+      "verifyWall": false,
+      "finalUrl": "https://www.zhihu.com/search?type=content&q=%E9%92%A2%E5%8C%96%E8%86%9C",
+      "repeat": 1
+    },
+    {
+      "platform": "知乎",
+      "pid": "zhihu",
+      "domain": "内容",
+      "condition": "native",
+      "textLen": 810,
+      "verifyWall": false,
+      "finalUrl": "https://www.zhihu.com/search?type=content&q=%E9%92%A2%E5%8C%96%E8%86%9C",
+      "repeat": 2
+    },
+    {
+      "platform": "知乎",
+      "pid": "zhihu",
+      "domain": "内容",
+      "condition": "headless",
+      "textLen": 118,
+      "verifyWall": false,
+      "finalUrl": "https://www.zhihu.com/search?type=content&q=%E9%92%A2%E5%8C%96%E8%86%9C",
+      "repeat": 2
+    },
+    {
+      "platform": "美团",
+      "pid": "meituan",
+      "domain": "本地生活",
+      "condition": "native",
+      "textLen": 42,
+      "verifyWall": true,
+      "finalUrl": "https://verify.meituan.com/v2/app/general_page?requestCode=a0d808c75ed84e1687fb4028ff7ae0c7&adaptor=auto&action=spiderindefence&succCallbackUrl=https%3A%2F%2Foptimus-mtsi.meituan.com%2Foptimus%2FverifyResult%3ForiginUrl%3Dhttps%253A%252F%252Fi.meituan.com%252Fmttouch%252Fpage%252Fhome",
+      "repeat": 1
+    },
+    {
+      "platform": "美团",
+      "pid": "meituan",
+      "domain": "本地生活",
+      "condition": "headless",
+      "textLen": 101,
+      "verifyWall": true,
+      "finalUrl": "https://verify.meituan.com/v2/app/general_page?requestCode=bb86deddd2524edebc78fd40f823f0c7&adaptor=auto&action=spiderindefence&succCallbackUrl=https%3A%2F%2Foptimus-mtsi.meituan.com%2Foptimus%2FverifyResult%3ForiginUrl%3Dhttps%253A%252F%252Fi.meituan.com%252Fmttouch%252Fpage%252Fhome",
+      "repeat": 1
+    },
+    {
+      "platform": "美团",
+      "pid": "meituan",
+      "domain": "本地生活",
+      "condition": "native",
+      "textLen": 107,
+      "verifyWall": true,
+      "finalUrl": "https://verify.meituan.com/v2/app/general_page?requestCode=a7a91cd28b8f446681e5e6e3ed3d60c7&adaptor=auto&action=spiderindefence&succCallbackUrl=https%3A%2F%2Foptimus-mtsi.meituan.com%2Foptimus%2FverifyResult%3ForiginUrl%3Dhttps%253A%252F%252Fi.meituan.com%252Fmttouch%252Fpage%252Fhome",
+      "repeat": 2
+    },
+    {
+      "platform": "美团",
+      "pid": "meituan",
+      "domain": "本地生活",
+      "condition": "headless",
+      "textLen": 101,
+      "verifyWall": true,
+      "finalUrl": "https://verify.meituan.com/v2/app/general_page?requestCode=d2252e6897c444ea9b6a5a03597af0c7&adaptor=auto&action=spiderindefence&succCallbackUrl=https%3A%2F%2Foptimus-mtsi.meituan.com%2Foptimus%2FverifyResult%3ForiginUrl%3Dhttps%253A%252F%252Fi.meituan.com%252Fmttouch%252Fpage%252Fhome",
+      "repeat": 2
+    }
+  ],
+  "report": [
+    {
+      "pid": "douyin",
+      "name": "抖音",
+      "domain": "内容",
+      "nativeMean": 638,
+      "headlessMean": 4,
+      "dropRatio": 0.9937,
+      "contrastValid": true,
+      "verdict": "STRONG(强检测)"
+    },
+    {
+      "pid": "zhihu",
+      "name": "知乎",
+      "domain": "内容",
+      "nativeMean": 810,
+      "headlessMean": 118,
+      "dropRatio": 0.8543,
+      "contrastValid": true,
+      "verdict": "STRONG(强检测)"
+    },
+    {
+      "pid": "bilibili",
+      "name": "B站",
+      "domain": "内容",
+      "nativeMean": 3068.5,
+      "headlessMean": 2926,
+      "dropRatio": 0.0464,
+      "contrastValid": true,
+      "verdict": "NONE(无差异)"
+    },
+    {
+      "pid": "jd",
+      "name": "京东",
+      "domain": "电商",
+      "nativeMean": 195,
+      "headlessMean": 195,
+      "dropRatio": 0,
+      "contrastValid": false,
+      "verdict": "INVALID(基线不足)"
+    },
+    {
+      "pid": "taobao",
+      "name": "淘宝",
+      "domain": "电商",
+      "nativeMean": 809,
+      "headlessMean": 809,
+      "dropRatio": 0,
+      "contrastValid": true,
+      "verdict": "NONE(无差异)"
+    },
+    {
+      "pid": "pdd",
+      "name": "拼多多",
+      "domain": "电商",
+      "nativeMean": 54,
+      "headlessMean": 54,
+      "dropRatio": 0,
+      "contrastValid": false,
+      "verdict": "INVALID(基线不足)"
+    },
+    {
+      "pid": "suning",
+      "name": "苏宁易购",
+      "domain": "电商",
+      "nativeMean": 4049,
+      "headlessMean": 4049,
+      "dropRatio": 0,
+      "contrastValid": true,
+      "verdict": "NONE(无差异)"
+    },
+    {
+      "pid": "vip",
+      "name": "唯品会",
+      "domain": "电商",
+      "nativeMean": 842,
+      "headlessMean": 842,
+      "dropRatio": 0,
+      "contrastValid": true,
+      "verdict": "NONE(无差异)"
+    },
+    {
+      "pid": "alibaba",
+      "name": "1688",
+      "domain": "电商",
+      "nativeMean": 59,
+      "headlessMean": 59,
+      "dropRatio": 0,
+      "contrastValid": false,
+      "verdict": "INVALID(基线不足)"
+    },
+    {
+      "pid": "meituan",
+      "name": "美团",
+      "domain": "本地生活",
+      "nativeMean": 74.5,
+      "headlessMean": 101,
+      "dropRatio": -0.3557,
+      "contrastValid": false,
+      "verdict": "INVALID(基线不足)"
+    }
+  ],
+  "domainSummary": [
+    {
+      "domain": "电商",
+      "n": 3,
+      "strongDetect": 0,
+      "meanDrop": 0
+    },
+    {
+      "domain": "内容",
+      "n": 3,
+      "strongDetect": 2,
+      "meanDrop": 0.6315
+    },
+    {
+      "domain": "本地生活",
+      "n": 0,
+      "strongDetect": 0,
+      "meanDrop": null
+    }
+  ]
+}
