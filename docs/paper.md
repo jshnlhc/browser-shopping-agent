@@ -55,7 +55,7 @@ Xue 等人[^6] 的 Online-Mind2Web 是本文最重要的方法论参照：他们
 
 ### 2.3 电商智能体
 
-WebShop[^7] 提供了 118 万真实商品、12,087 条众包指令的模拟环境，是电商智能体的奠基性工作。近期工作转向更复杂的设定：ShopSimulator[^11] 探索面向购物助手的强化学习驱动智能体；ProductResearch[^12] 通过多智能体合成轨迹蒸馏训练电商深度研究智能体；另有工作引入长期记忆机制处理跨会话购物任务[^13]。
+WebShop[^7] 提供了 118 万真实商品、12,087 条众包指令的模拟环境，是电商智能体的奠基性工作。近期工作转向更复杂的设定：ShopSimulator[^11] 探索面向购物助手的强化学习驱动智能体；ProductResearch[^12] 通过多智能体合成轨迹蒸馏训练电商深度研究智能体；另有工作构建了面向长时程、偏好锚定的电商任务基准[^13]。
 
 Allouah 等人[^8] 的 ACES 框架从经济学视角审计智能体决策，发现**选择同质化（choice homogeneity）**、**位置偏见（position bias）**以及对赞助标签的惩罚等系统性偏差，且这些偏好随模型版本更新剧烈波动。该工作分析的是智能体的**决策层**；本文关注其**执行层** —— 两者互补。
 
@@ -393,8 +393,8 @@ pointerdown → mousedown → pointerup → mouseup → click
 [^9]: Xie, T., Zhang, D., Chen, J., et al. OSWorld: Benchmarking Multimodal Agents for Open-Ended Tasks in Real Computer Environments. NeurIPS 2024.
 [^10]: Rawles, C., Clinckemaillie, S., Chang, Y., et al. AndroidWorld: A Dynamic Benchmarking Environment for Autonomous Agents. ICLR 2025.
 [^11]: Wang, P., Wu, Y., Song, X., et al. ShopSimulator: Evaluating and Exploring RL-Driven LLM Agent for Shopping Assistants. arXiv:2601.18225.
-[^12]: Wang, P., et al. ProductResearch: Training E-Commerce Deep Research Agents via Multi-Agent Synthetic Trajectory Distillation. arXiv:2602.23716.
-[^13]: A Memory-Augmented LLM Agent for Real-World E-Commerce Tasks. arXiv:2603.14864.
+[^12]: Wang, J., Xiao, K., Zhao, H., et al. ProductResearch: Training E-Commerce Deep Research Agents via Multi-Agent Synthetic Trajectory Distillation. arXiv:2602.23716.
+[^13]: Yu, Z., Xiao, K., Zhao, H., et al. Shopping Companion: Benchmarking and Training LLM Agents for Long-Horizon Preference-Grounded E-Commerce Tasks. arXiv:2603.14864.
 [^14]: 京东云开发者社区. 商家智能助手：多智能体在电商垂域的技术探索.
 [^15]: niespodd. browser-fingerprinting: Analysis of Bot Protection Systems. GitHub.
 [^16]: Browserless. Anti-Detection Techniques: 2026 Comprehensive Guide.
