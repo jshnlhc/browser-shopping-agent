@@ -1,0 +1,97 @@
+[
+  {
+    "platform": "淘宝",
+    "pid": "taobao",
+    "domain": "电商",
+    "n_valid": 6,
+    "n_total": 6,
+    "textLen_mean": 6727,
+    "textLen_sd": 595,
+    "requests_mean": 348,
+    "goods_mean": 33.5
+  },
+  {
+    "platform": "京东",
+    "pid": "jd",
+    "domain": "电商",
+    "n_valid": 4,
+    "n_total": 6,
+    "textLen_mean": 5230,
+    "textLen_sd": 168,
+    "requests_mean": 238,
+    "goods_mean": 16.25
+  },
+  {
+    "platform": "抖音",
+    "pid": "douyin",
+    "domain": "内容",
+    "n_valid": 6,
+    "n_total": 6,
+    "textLen_mean": 4371,
+    "textLen_sd": 504,
+    "requests_mean": 449,
+    "goods_mean": 1.17
+  },
+  {
+    "platform": "B站",
+    "pid": "bilibili",
+    "domain": "内容",
+    "n_valid": 6,
+    "n_total": 6,
+    "textLen_mean": 2936,
+    "textLen_sd": 175,
+    "requests_mean": 144,
+    "goods_mean": 2
+  },
+  {
+    "platform": "苏宁易购",
+    "pid": "suning",
+    "domain": "电商",
+    "n_valid": 6,
+    "n_total": 6,
+    "textLen_mean": 2900,
+    "textLen_sd": 433,
+    "requests_mean": 150,
+    "goods_mean": 0
+  },
+  {
+    "platform": "拼多多",
+    "pid": "pdd",
+    "domain": "电商",
+    "n_valid": 6,
+    "n_total": 6,
+    "textLen_mean": 1871,
+    "textLen_sd": 79,
+    "requests_mean": 116,
+    "goods_mean": 22.5
+  },
+  {
+    "platform": "唯品会",
+    "pid": "vip",
+    "domain": "电商",
+    "n_valid": 6,
+    "n_total": 6,
+    "textLen_mean": 842,
+    "textLen_sd": 0,
+    "requests_mean": 145,
+    "goods_mean": 0
+  },
+  {
+    "platform": "知乎",
+    "pid": "zhihu",
+    "domain": "内容",
+    "n_valid": 6,
+    "n_total": 6,
+    "textLen_mean": 804,
+    "textLen_sd": 0,
+    "requests_mean": 162,
+    "goods_mean": 0
+  },
+  {
+    "platform": "美团",
+    "pid": "meituan",
+    "domain": "本地生活",
+    "n_valid": 0,
+    "n_total": 6
+  }
+]

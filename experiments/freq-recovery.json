@@ -1,0 +1,33 @@
+{
+  "sku": "100039278567",
+  "intervalSec": 90,
+  "probes": [
+    {
+      "round": 1,
+      "at": "2026-09-25T15:36:16.777Z",
+      "title": "PC频控页 -京东商城",
+      "len": 824,
+      "attrs": 0,
+      "elapsedSec": 12,
+      "blocked": true
+    },
+    {
+      "round": 2,
+      "at": "2026-09-25T15:37:58.485Z",
+      "title": "PC频控页 -京东商城",
+      "len": 824,
+      "attrs": 0,
+      "elapsedSec": 12,
+      "blocked": true
+    },
+    {
+      "round": 3,
+      "at": "2026-09-25T15:39:40.060Z",
+      "title": "PC频控页 -京东商城",
+      "len": 824,
+      "attrs": 0,
+      "elapsedSec": 12,
+      "blocked": true
+    }
+  ]
+}

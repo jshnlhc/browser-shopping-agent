@@ -1,0 +1,15 @@
+{
+  "sku": "100336679658",
+  "intervalSec": 90,
+  "probes": [
+    {
+      "round": 1,
+      "at": "2026-09-25T15:42:11.617Z",
+      "title": "PC频控页 -京东商城",
+      "len": 824,
+      "attrs": 0,
+      "elapsedSec": 11,
+      "blocked": true
+    }
+  ]
+}
