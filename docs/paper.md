@@ -16,6 +16,18 @@
 
 **关键词**：Web 智能体；浏览器自动化；Chrome DevTools Protocol；电商；失效分析；人机协作；可复现性
 
+### Abstract
+
+Large language model (LLM)-based web and GUI agents have advanced rapidly on sandboxed benchmarks, yet their feasibility on **real Chinese e-commerce platforms** remains largely undocumented. We report a shopping-agent methodology built on **headed browsers and the Chrome DevTools Protocol (CDP)**, systematically validated across ten platform/business lines including JD, Taobao/Tmall, Pinduoduo, Douyin, Suning, 1688, and Dewu. Our central claim is that in heavily risk-controlled Chinese e-commerce environments, the bottleneck is not reasoning capability but **(a) carrier authenticity** and **(b) reliability of state evidence**.
+
+Our contributions are: (1) a three-layer architecture (browser carrier / CDP control plane / domain logic) with a **credential-safety constraint** — login is performed by the user in an isolated browser profile, with credentials never persisted or handled by the agent, avoiding the plaintext-cookie leakage prevalent in existing open-source projects (we audited a real case in which 2 MB of Taobao cookies were committed to a public repository); (2) a set of **counter-intuitive failure modes** with mechanistic explanations, including the *opposing* effects of user-agent spoofing on Taobao versus JD (spoofing fixes Taobao rendering but destroys JD sessions), APIs that return success yet silently fail, and a structural trap where the decrement and increment controls share the same CSS Modules class name; (3) an **evidence-source hierarchy** (protected-page redirect test > checkout-page settled amount > product-page listed price) together with a rule-based explanation of the gap between advertised and settled prices; (4) a **failure taxonomy** classifying failure families along two orthogonal dimensions — occurrence layer and repairability — showing that only risk-control interception merits engineering investment; (5) an explicit delineation of **non-automatable boundaries** (real-name verification, payment, SMS codes) with legal and ethical analysis.
+
+We release the toolchain and procedure specification. This paper is positioned as an **empirical pilot study and methodological contribution** rather than a systematic evaluation; we provide an executable evaluation protocol (§8) and explicitly discuss threats to validity (§9).
+
+**Compliance statement**: the described methods do not break encryption, forge identities, or bypass real-name or payment verification; they operate only within the user's own authorized scope using a real browser. We explicitly oppose the use of these methods for scalping, fake-order generation, or account farming.
+
+**Keywords**: web agents; browser automation; Chrome DevTools Protocol; e-commerce; failure analysis; human–agent collaboration; reproducibility
+
 ---
 
 ## 1 引言
