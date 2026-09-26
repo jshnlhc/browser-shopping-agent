@@ -35,3 +35,4 @@ venv/
 .idea/
 .DS_Store
 Thumbs.db
+!experiments/tb-samples/*.txt
